@@ -1,1 +1,7 @@
-{}
+{
+  "newLinkFormat": "relative",
+  "useMarkdownLinks": true,
+  "alwaysUpdateLinks": true,
+  "attachmentFolderPath": "./inbox",
+  "trashOption": "local"
+}

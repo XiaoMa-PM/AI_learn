@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Welcome.md",
+                "file": "chapter1/第一章 NLP基础概念.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Welcome"
+              "title": "第一章 NLP基础概念"
             }
           }
         ]
@@ -44,7 +44,7 @@
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
-              "title": "Files"
+              "title": "文件列表"
             }
           },
           {
@@ -61,7 +61,7 @@
                 "sortOrder": "alphabetical"
               },
               "icon": "lucide-search",
-              "title": "Search"
+              "title": "搜索"
             }
           },
           {
@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "2cb7275185dc645a",
@@ -160,14 +161,40 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "switcher:Open quick switcher": false,
-      "graph:Open graph view": false,
-      "canvas:Create new canvas": false,
-      "daily-notes:Open today's daily note": false,
-      "templates:Insert template": false,
-      "command-palette:Open command palette": false
+      "bases:创建新数据库": false,
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "obsidian-git:Open Git source control": false
     }
   },
-  "active": "5f82793bf28c4b32",
-  "lastOpenFiles": []
+  "active": "a6011eddbe44afdd",
+  "lastOpenFiles": [
+    "前言.md",
+    "chapter1/第一章 NLP基础概念.md",
+    "chapter7",
+    "chapter6",
+    "chapter5",
+    "chapter4",
+    "inbox/42c3ed95ee69120a3fa9b6a67e8553e9.jpg",
+    "inbox",
+    "Pasted image 20250819013237.png",
+    "chapter7/第七章 大模型应用.md",
+    "chapter6/第六章 大模型训练流程实践.md",
+    "chapter1/inbox/Pasted image 20250819013424.png",
+    "chapter1/inbox",
+    "chapter2/第二章 Transformer架构.md",
+    "chapter3",
+    "chapter2",
+    "42c3ed95ee69120a3fa9b6a67e8553e9.jpg",
+    "chapter1",
+    "chapter5/第五章 动手搭建大模型.md",
+    "chapter4/第四章 大语言模型.md",
+    "chapter3/第三章 预训练模型.md",
+    "Happy-LLM.md",
+    "Welcome.md"
+  ]
 }
