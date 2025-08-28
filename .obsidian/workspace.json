@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "chapter2/第二章 Transformer架构.md",
+                "file": "chapter3/第三章 预训练语言模型.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "第二章 Transformer架构"
+              "title": "第三章 预训练语言模型"
             }
           },
           {
@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "AI_PM/AI产品行动营.md",
+                "file": "chapter2/第二章 Transformer架构.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "AI产品行动营"
+              "title": "第二章 Transformer架构"
             }
           }
         ]
@@ -187,9 +187,11 @@
   },
   "active": "e2a2861f6c7129cc",
   "lastOpenFiles": [
-    "AI_PM/AI产品行动营.md",
-    "前言.md",
     "chapter2/第二章 Transformer架构.md",
+    "chapter3/第三章 预训练语言模型.md",
+    "AI_PM/AI产品行动营.md",
+    "chapter2/inbox/Pasted image 20250828104226.png",
+    "前言.md",
     "chapter2/inbox/Pasted image 20250823024029.png",
     "chapter1/第一章 NLP基础概念.md",
     "AI_PM/README.md",
@@ -204,7 +206,6 @@
     "chapter5",
     "chapter4/第四章 大语言模型.md",
     "chapter4",
-    "chapter3/第三章 预训练模型.md",
     "chapter3",
     "chapter2/inbox",
     "chapter2",
