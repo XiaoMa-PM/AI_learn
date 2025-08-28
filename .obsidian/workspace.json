@@ -8,17 +8,13 @@
         "type": "tabs",
         "children": [
           {
-            "id": "a6011eddbe44afdd",
+            "id": "e2a2861f6c7129cc",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "chapter2/第二章 Transformer架构.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "第二章 Transformer架构"
+              "title": "新标签页"
             }
           }
         ]
@@ -78,8 +74,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "2cb7275185dc645a",
@@ -171,32 +166,45 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "a6011eddbe44afdd",
+  "active": "e2a2861f6c7129cc",
   "lastOpenFiles": [
-    "chapter1/第一章 NLP基础概念.md",
-    "chapter2/第二章 Transformer架构.md",
-    "chapter2/inbox/Pasted image 20250823024029.png",
-    "chapter2/inbox",
-    "未命名.base",
-    "未命名 1.base",
-    "happy-LLM.base",
+    "AI_PM/README.md",
     "前言.md",
     "inbox/Pasted image 20250821094114.png",
-    "chapter7",
-    "chapter6",
-    "chapter5",
-    "chapter4",
     "inbox/42c3ed95ee69120a3fa9b6a67e8553e9.jpg",
     "inbox",
-    "Pasted image 20250819013237.png",
     "chapter7/第七章 大模型应用.md",
+    "chapter7",
     "chapter6/第六章 大模型训练流程实践.md",
-    "chapter1/inbox/Pasted image 20250819013424.png",
-    "chapter1/inbox",
-    "42c3ed95ee69120a3fa9b6a67e8553e9.jpg",
+    "chapter6",
     "chapter5/第五章 动手搭建大模型.md",
+    "chapter5",
     "chapter4/第四章 大语言模型.md",
+    "chapter4",
     "chapter3/第三章 预训练模型.md",
+    "chapter3",
+    "chapter2/inbox/Pasted image 20250823024029.png",
+    "chapter2/第二章 Transformer架构.md",
+    "chapter2/inbox",
+    "chapter2",
+    "chapter1/第一章 NLP基础概念.md",
+    "chapter1",
+    "AI_PM/Resume.md",
+    "Happy_LLM/chapter2/第二章 Transformer架构.md",
+    "Happy_LLM",
+    "Happy_LLM/chapter1/第一章 NLP基础概念.md",
+    "Happy_LLM/chapter2/inbox/Pasted image 20250823024029.png",
+    "Happy_LLM/前言.md",
+    "Happy_LLM/inbox/Pasted image 20250821094114.png",
+    "Happy_LLM/inbox/42c3ed95ee69120a3fa9b6a67e8553e9.jpg",
+    "Pasted image 20250819013237.png",
+    "Happy_LLM/chapter7/第七章 大模型应用.md",
+    "Happy_LLM/chapter6/第六章 大模型训练流程实践.md",
+    "chapter1/inbox/Pasted image 20250819013424.png",
+    "42c3ed95ee69120a3fa9b6a67e8553e9.jpg",
+    "Happy_LLM/chapter5/第五章 动手搭建大模型.md",
+    "Happy_LLM/chapter4/第四章 大语言模型.md",
+    "Happy_LLM/chapter3/第三章 预训练模型.md",
     "Happy-LLM.md",
     "Welcome.md"
   ]
