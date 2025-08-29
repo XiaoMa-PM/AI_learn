@@ -35,7 +35,8 @@
               "title": "第二章 Transformer架构"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -185,10 +186,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "e2a2861f6c7129cc",
+  "active": "86cd0230febe95fc",
   "lastOpenFiles": [
-    "chapter2/第二章 Transformer架构.md",
     "chapter3/第三章 预训练语言模型.md",
+    "chapter2/第二章 Transformer架构.md",
     "AI_PM/AI产品行动营.md",
     "chapter2/inbox/Pasted image 20250828104226.png",
     "前言.md",
