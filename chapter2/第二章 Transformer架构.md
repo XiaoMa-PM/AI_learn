@@ -387,17 +387,275 @@ Information Bottleneck
 
 ### 2. 前馈神经网络
 Feed Forward Neural Network，FNN
+与MultiHeadAttention并行运行的模块
 
+Transformer中的FNN由2个线性层+1个激活函数（ReLU/GELU）：
+第一个线性层（扩展层）将输入的向量维度512扩展到一个更大的维度2048
+非线性激活函数
+第二个线性层（收缩层）将向量的维度从2048收缩回512
+
+逐位置处理（Position-wise）
+FFN独立地应用于句子中每个词的向量上。好比处理“cat”和“sit”的两个词的处理向量用的FNN上完全独立，这样也会拥有完全相同的权重。信息在FNN内部不会在不同单词之间流动。
+
+Transformer Block 内部的分工：
+- **多头自注意力 (Multi-Head Attention):**
+    - **它的任务是“沟通”**。它负责让句子中的每一个词都能和其他所有词进行充分的信息交互，**建立全局的上下文感知**。它的操作是**跨位置**的。
+- **前馈网络 (Feed-Forward Network):**
+    - **它的任务是“思考”**。它接收了经过注意力层“沟通”后、已经富含上下文信息的向量，然后对**每一个**这样的向量进行一次**独立的、更深层次的非线性加工和提炼**。它的操作是**逐位置**的。
+
+```python
+class MLP(nn.Module):
+    '''前馈神经网络'''
+    def __init__(self, dim: int, hidden_dim: int, dropout: float):
+        super().__init__()
+        # 定义第一层线性变换，从输入维度到隐藏维度
+        self.w1 = nn.Linear(dim, hidden_dim, bias=False)
+        # 定义第二层线性变换，从隐藏维度到输入维度
+        self.w2 = nn.Linear(hidden_dim, dim, bias=False)
+        # 定义dropout层，用于防止过拟合
+        self.dropout = nn.Dropout(dropout)
+
+    def forward(self, x):
+        # 前向传播函数
+        # 首先，输入x通过第一层线性变换和RELU激活函数
+        # 最后，通过第二层线性变换和dropout层
+        '''
+        F.relu（）对内部内容进行激活函数计算
+        Relu将x<0输出y=0，x>0输出y=x
+        '''
+        return self.dropout(self.w2(F.relu(self.w1(x))))
+    
+```
+
+FNN补充说明：
+- 全连接归属于进行了把全部向量线性组合（调频缩放）
+- 激活函数进行了二分类，实现特征提取
+
+**总结**：
+Multi-Head Attention：
+它的工作是信息整合，负责把一个词的向量-->包含上下文的向量（信息的路由）
+Feed-Forward Network：
+进行特征提取，把MHA输出的词向量（单义+上下文义）进行特征提取，抽取出（特征）
+最终输出词向量构成（Add&Norm）：
+词向量（单义+上下文义+抽象特征）
 ### 3. 层归一化
+Layer Norm
+神经网络的归一化之一，另外一种说批归一化Batch Norm
+
+内部协变量偏移（Internal Covariate Shift）---“随着神经网络参数的更新，各层的输出分布是不相同的，且差异会随着网络深度的增大而增大。但是，需要预测的条件分布始终是相同的，从而也就造成了预测的误差。”
+各层输出发布是不相同的：每一次训练，会有loss fuction让其调参，导致与上一次存在差异，从而输出结果与上一次输出结果不同。
+差异随着网络深度增大而增大：深层的连接层，是以上一层的output为input，故其输出的output会差异化更加大。
+归一化用于每一层output后先进行了归一找平，保证整体每一层都在一个稳定范围内分布。
+
+Z=output
+归一化就是把使用
+Zi=（Z-均值）/（方差-极小值）
+极小值是防止分母为0
+
+归一化一般可能会把所有向量强制为：均值=0，方差=1，这不利于区分，故层归一化引入了两个**可学习的**参数：
+**增益 (gain)，γ (gamma):** 一个乘法因子。
+**偏置 (bias)，β (beta):** 一个加法因子。
+在上面第3步归一化之后，还会有一个最终的调整步骤：
+![](inbox/Pasted%20image%2020250830200540.png)
+这两个参数属于LN自有参数，在运行中自动学习调整。实现控制均值、方差在一个最优范围。
+
+
+**拓展：批归一化BN**诞生于CV图像处理的。在处理CV更加有意义。
+第一批图像识别猫咪，结果达到了8-10，第二批因为偏暗，导致出现了1-5的情况，这个时候绝对值市区了意义。这也被叫做**内部协变量偏移**
+归一化后，两批的最高分可能被统一在2，这样子就会有利于调整不同批次之间的其他偏差影响（亮度），从而让神经元输出**纯粹**的**特征本身**
+
+为什么BN不适用于NLP？
+变长序列与填充的原因，不同批的语句序列长度不一，会使用“填充符”填充，之后进行某个尾部词语的批归一化，容易让该词被“填充符”污染。
+为什么使用层归一化LN？
+因为层归一化，是对单批（样本）的多层归一化，只需要让句子里的所有词的特征分布调整到一个标准状态。
+
+回归到大语言模型学习过程，模型是多层的神经网络组成，在每一层里面，LN它用于每一层的残差后。也就是**Add&Norm**：
+`output = LayerNorm(input + SubLayer(input))`
+1. **`input + SubLayer(input)` (Add - 残差连接):** ^fb9cb6
+    - `SubLayer` 指的是多头注意力层或前馈网络层。
+    - 这一步将原始的输入信息和经过复杂变换后的新信息**相加**。
+    - **目的：** 保证信息在深层网络中传递时不丢失（解决了梯度消失问题）。
+    - **副作用：** 相加后的结果，其数值分布可能会变得混乱。
+2. **`LayerNorm(...)` (Norm - 层归一化):**
+    - **紧接着**对相加后的结果进行层归一化。
+    - **目的：** 立即将混乱的数值分布“拉回”到一个稳定、规范的“地形”上，为**下一个** Transformer Block 的计算做好准备。
+“Add” 负责信息的有效流动和整合，而 “Norm” 负责在每一步之后进行“清理”和“稳定”，确保整个深度 Transformer 模型深度神经网络能够顺畅、稳定地进行下去。
+
+```python
+class LayerNorm(nn.Module):
+    ''' Layer Norm 层'''
+    def __init__(self, features, eps=1e-6):
+    '''
+    features模型的维度，举例中的512维，LN要处理的向量长度
+    eps为归一化中分母的极小数
+    '''
+	super().__init__()
+    # 线性矩阵做映射
+	self.a_2 = nn.Parameter(torch.ones(features))
+	self.b_2 = nn.Parameter(torch.zeros(features))
+	self.eps = eps
+	'''
+	nn.Parameter()归属于参数，需要调参更新的一部分
+	a_2是全为1，计算中为斜率；b_2全是0，为偏置
+	def forward（）定义了x向量流过时的计算，x通常为[batch_size,seq_len,features]
+	x.mean(-1,keepdim=True),-1为[B,T,512]的512，只取出512（所有特征）计算；keepdim保持维度不变；比喻，计算完了会输出[B,T,1]而不是[B,T]。
+	使用keepdim保持维度有利于下一步广播机制计算。x[B，T,512]-mean[B,T,1]，保留最后一个维度，会默认把mean在最后一个维度上复制512次，匹配x。[B,T,1]的1表示的是一个被压缩过的维度的体现，1也代表只有一个数，而不是两个数。
+	'''
+    def forward(self, x):
+	# 在统计每个样本所有维度的值，求均值和方差
+	mean = x.mean(-1, keepdim=True) # mean: [bsz, max_len, 1]
+	std = x.std(-1, keepdim=True) # std: [bsz, max_len, 1]
+    # 注意这里也在最后一个维度发生了广播
+	return self.a_2 * (x - mean) / (std + self.eps) + self.b_2
+```
+此处也可以选择直接调用`Pytorch`的`nn.LayerNorm`
+![](inbox/Pasted%20image%2020250830225546.png)
+拓展：回归class
+class是设计类，`LayerNorm(nn.Module)`属于类的名称，而当使用`my_norm = LayerNorm(features=512)`，是运行了`LayerNorm`，其中`my_norm`是对象，即实例。
+`self`是默认的设定参数方式，`self.a_2`即出现的参数仅为该类内使用，不会影响外部的`a_2`
+`super().__init__()`为调用了父类的`__init__()`
 
 ### 4. 残差连接
+[残差连接](第二章%20Transformer架构.md#^fb9cb6)
+```python
+# 注意力计算
+h = x + self.attention.forward(self.attention_norm(x))
+# 经过前馈神经网络
+out = h + self.feed_forward.forward(self.fnn_norm(h))
+```
 
 ### 5. Encoder
+每个Encoder Layer包含一个注意力层+一个前馈神经网络
+```python
+class EncoderLayer(nn.Module):
+  '''Encoder层'''
+    def __init__(self, args):
+        super().__init__()
+        # 一个 Layer 中有两个 LayerNorm，分别在 Attention 之前和 MLP 之前
+        self.attention_norm = LayerNorm(args.n_embd)
+        # Encoder 不需要掩码，传入 is_causal=False
+        self.attention = MultiHeadAttention(args, is_causal=False)
+        self.fnn_norm = LayerNorm(args.n_embd)
+        self.feed_forward = MLP(args.dim, args.dim, args.dropout)
+
+    def forward(self, x):
+        # Layer Norm
+        norm_x = self.attention_norm(x)
+        # 自注意力
+        h = x + self.attention.forward(norm_x, norm_x, norm_x)
+        # 经过前馈神经网络
+        out = h + self.feed_forward.forward(self.fnn_norm(h))
+        return out
+```
+
+Encoder由N个Encoder Layer组成
+```python
+class Encoder(nn.Module):
+    '''Encoder 块'''
+    def __init__(self, args):
+        super(Encoder, self).__init__() 
+        # 一个 Encoder 由 N 个 Encoder Layer 组成
+        self.layers = nn.ModuleList([EncoderLayer(args) for _ in range(args.n_layer)])
+        self.norm = LayerNorm(args.n_embd)
+
+    def forward(self, x):
+        "分别通过 N 层 Encoder Layer"
+        for layer in self.layers:
+            x = layer(x)
+        return self.norm(x)
+```
+Encoder输出的旧俗编码后的结果
+![](inbox/38fd9bfa9410bcfbf3d870c2d8a29e76.png)
 
 ### 6. Decoder
+Decoder由1个Mask-Self Attention+1个Multi-Self Attention+1个Feed组成。第二个多头注意力层使用了Mask-Self Attention为query，使用Encoder作为key和value计算注意力分数。
+```python
+class DecoderLayer(nn.Module):
+  '''解码层'''
+    def __init__(self, args):
+        super().__init__()
+        # 一个 Layer 中有三个 LayerNorm，分别在 Mask Attention 之前、Self Attention 之前和 MLP 之前
+        self.attention_norm_1 = LayerNorm(args.n_embd)
+        # Decoder 的第一个部分是 Mask Attention，传入 is_causal=True
+        self.mask_attention = MultiHeadAttention(args, is_causal=True)
+        self.attention_norm_2 = LayerNorm(args.n_embd)
+        # Decoder 的第二个部分是 类似于 Encoder 的 Attention，传入 is_causal=False
+        self.attention = MultiHeadAttention(args, is_causal=False)
+        self.ffn_norm = LayerNorm(args.n_embd)
+        # 第三个部分是 MLP
+        self.feed_forward = MLP(args.dim, args.dim, args.dropout)
+
+    def forward(self, x, enc_out):
+        # Layer Norm
+        norm_x = self.attention_norm_1(x)
+        # 掩码自注意力
+        x = x + self.mask_attention.forward(norm_x, norm_x, norm_x)
+        # 多头注意力
+        norm_x = self.attention_norm_2(x)
+        h = x + self.attention.forward(norm_x, enc_out, enc_out)
+        # 经过前馈神经网络
+        out = h + self.feed_forward.forward(self.ffn_norm(h))
+        return out
+```
+之后同理建设一个Decoder块
+```python
+class Decoder(nn.Module):
+    '''解码器'''
+    def __init__(self, args):
+        super(Decoder, self).__init__() 
+        # 一个 Decoder 由 N 个 Decoder Layer 组成
+        self.layers = nn.ModuleList([DecoderLayer(args) for _ in range(args.n_layer)])
+        self.norm = LayerNorm(args.n_embd)
+
+    def forward(self, x, enc_out):
+        "Pass the input (and mask) through each layer in turn."
+        for layer in self.layers:
+            x = layer(x, enc_out)
+        return self.norm(x)
+```
+
+![](inbox/8bf8faa52a436c92ffe107dbfcb3d494.png)
+
+**问个不停**
+为什么Encoder的多头自注意力不用mask？
+Encoder 的目标是为输入序列中的每一个词，都生成一个融合了**全局双向上下文**的、最丰富的向量表示。它需要“上帝视角”，所以它的自注意力必须是无遮挡的。
+为什么Decoder的多头自注意力使用mask？
+Decoder 的工作模式是**自回归 (Autoregressive)** 的，即“基于已经生成的内容，来预测下一个内容”。为了在训练时模拟这个过程，我们必须使用 **Masked Self-Attention**，确保在预测第 `i` 个词时，模型只能“看到”第 `1` 到 `i-1` 个词，而不能“偷看”第 `i` 个词以及它之后的内容。
+为什么Decoder设置了两个注意力层？
+因为Decoder一项自注意力（掩码自注意力）在进行解密，一项自注意力（交叉注意力）是研究Encoder输出的信息
+
+**总结Transformer核心流程**：
+**我们的使命：** 翻译句子 `The robot picked up the red ball`
+Encoder理解全文：
+目标：输入的英文句子，转换成一套富含上下文信息的向量
+- Embedding层，输出：x
+- Encoder循环多次
+	- Multi-Head Self-Attention（No Mask），每个词吸收上下文信息。
+	- Add&Norm。输出：x+上下文
+	- Feed-Forward Network。
+	- Add&Norm。输出：x+上下文+抽象特征（属性）
+
+Decoder生成中文译文：
+目标：输入的Encoder结果，一个词一个词、自回归生成目标语言（中文）的句子
+- Decoder循环多次
+	- Maske MHA，让正在生成的中文句子，关注自身已经生成的部分，保证自连贯。**一开始的词是`<start>`符号**，去敲定最高概率的第一个输出词
+	- Add&Norm。
+	- Cross-Attention，对照翻译。连接了Encoder和Decoder。根据当前中文生成状态，去原文的Encoder结果寻找参考信息。Q（来自Mask MHA）基于已有的`<start>`去寻找该关注下一个词是什么？去encoder寻找K和V。即寻找与`<start>`相似度最高的词。锁定到`robot`，输出`robot`的向量
+	- Add&Norm。
+	- Feed-Forward Network。提炼中文上下文的抽象特征，用于预测下一个词。
+	- Add&Norm。
+线性层+Softmax：最终决策
+- 输出所有中文词的概率分布
+循环回到Decoder，重复第2步和第3步
+- 在**掩码自注意力**中，“机器人”会关注“那个”，确保连贯。
+- 在**交叉注意力**中，`[<start>, 那个, 机器人]` 的整体信息作为Query，可能会再次高度关注 `robot`，也可能开始关注 `picked up`。
+- ...最终预测出第三个词“捡起”。
+这个循环会一直持续，直到模型预测出一个特殊的 **`<end>`** (句子结束) 符号，整个翻译过程才宣告结束。
+**最终输出：** `那个 机器人 捡起 了 那个 红色 的 球`
 
 ## 三、搭建一个Transformer
 ---
+此前的Encoder+Decoder已经是Transformer的核心部分，只剩下Embedding层还没做。
 
 ### 1. Embedding层
 
