@@ -11,13 +11,46 @@
             "id": "ee23cf97cb22673d",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "AI_PM/AI产品行动营.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "新标签页"
+              "title": "AI产品行动营"
+            }
+          },
+          {
+            "id": "79cf3e0b1b389da2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "AI_PM/chapter1/大模型原理.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "大模型原理"
+            }
+          },
+          {
+            "id": "8b50fa99542907e6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "AI_PM/chapter1/大模型原理.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "大模型原理"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -166,23 +199,27 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "ee23cf97cb22673d",
+  "active": "8b50fa99542907e6",
   "lastOpenFiles": [
+    "AI_PM/chapter1/生成式能力边界.md",
+    "AI_PM/chapter1/inbox/Pasted image 20250831210155.png",
+    "AI_PM/chapter1/inbox/Pasted image 20250831205816.png",
+    "AI_PM/chapter1/大模型原理.md",
+    "AI_PM/chapter1/inbox/Pasted image 20250831205805.png",
+    "AI_PM/chapter1/inbox",
+    "inbox/Pasted image 20250831205801.png",
+    "AI_PM/AI产品行动营.md",
+    "chapter1/第一章 NLP基础概念.md",
     "chapter2/第二章 Transformer架构.md",
+    "chapter2/inbox/Pasted image 20250831183141.png",
     "chapter2/inbox/8bf8faa52a436c92ffe107dbfcb3d494.png",
     "chapter2/inbox/38fd9bfa9410bcfbf3d870c2d8a29e76.png",
     "chapter2/inbox/Pasted image 20250830225546.png",
     "chapter2/inbox/Pasted image 20250830200540.png",
     "chapter2/inbox/Pasted image 20250830015353.png",
-    "chapter1/第一章 NLP基础概念.md",
-    "AI_PM/AI产品行动营.md",
     "chapter3/第三章 预训练语言模型.md",
-    "chapter2/inbox/Pasted image 20250828104226.png",
     "前言.md",
-    "chapter2/inbox/Pasted image 20250823024029.png",
     "AI_PM/README.md",
-    "inbox/Pasted image 20250821094114.png",
-    "inbox/42c3ed95ee69120a3fa9b6a67e8553e9.jpg",
     "inbox",
     "chapter7/第七章 大模型应用.md",
     "chapter7",
@@ -198,9 +235,7 @@
     "chapter1",
     "AI_PM/Resume.md",
     "Happy_LLM/chapter2/第二章 Transformer架构.md",
-    "Happy_LLM",
     "Happy_LLM/chapter1/第一章 NLP基础概念.md",
-    "Happy_LLM/chapter2/inbox/Pasted image 20250823024029.png",
     "Happy_LLM/前言.md",
     "Happy_LLM/chapter7/第七章 大模型应用.md",
     "Happy_LLM/chapter6/第六章 大模型训练流程实践.md",
