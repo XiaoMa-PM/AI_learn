@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "AI_PM/chapter1/大模型原理.md",
+                "file": "AI_PM/chapter1/生成式能力边界.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "大模型原理"
+              "title": "生成式能力边界"
             }
           }
         ],
@@ -201,10 +201,10 @@
   },
   "active": "8b50fa99542907e6",
   "lastOpenFiles": [
+    "AI_PM/chapter1/大模型原理.md",
     "AI_PM/chapter1/生成式能力边界.md",
     "AI_PM/chapter1/inbox/Pasted image 20250831210155.png",
     "AI_PM/chapter1/inbox/Pasted image 20250831205816.png",
-    "AI_PM/chapter1/大模型原理.md",
     "AI_PM/chapter1/inbox/Pasted image 20250831205805.png",
     "AI_PM/chapter1/inbox",
     "inbox/Pasted image 20250831205801.png",
