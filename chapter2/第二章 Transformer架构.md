@@ -658,7 +658,150 @@ Decoder生成中文译文：
 此前的Encoder+Decoder已经是Transformer的核心部分，只剩下Embedding层还没做。
 
 ### 1. Embedding层
+现代所有的NLP模型第一道门，同[3. Word2Vec](../chapter1/第一章%20NLP基础概念.md#3.%20Word2Vec) ，将自然语言处理为词向量
+
+补充理解Embedding
+- One-Hot编码，5万词维度，“cat”为其中的某个位置为1，其他为0
+- Word2Vec：我们可以预先在一个巨大通用语料库上，训练一套通用词向量，每个词都对应低纬度的密集的包含语义的向量
+
+**Embedding层：**
+- `nn.Embedding`in PyTorch的一个查找表，一个特色词典
+	- 字典“词条”：所有单词
+	- 字典“释义”：每个词所对应的密集向量
+- 工作原理：
+	- 输入：单词在词典中的“索引ID”。例如，模型接收到句子 `[45, 123, 8]`，代表 `['猫', '坐', '在']`。
+	- 查找：工具单个索引id`45`，去字典中查找第45列输出其释义
+	- 输出：输出的是一个或一批密集向量。例如`[45,123,8]`会输出三个512维的向量，分别对应“猫”、“坐”、“在”的语义
+- 作用：查找效率比One-Hot快很多
+
+**区别：Word2Vec与Embedding层**
+**Word2Vec：**“预训练”（Pre-trained）、“静态”（Static）
+- 事先大语料库训练好
+- 训练好、固定不变的词向量加载为模型的初始值。
+- **此处的大语料库为通用预料，非某一领域专精。**
+**`nn.Embedding`层**：端到端学习（End-to-End Learned）、“动态”（Dynamic）
+- 从零开始：初始化大模型时，Embedding层的“查询表”权重矩阵一般随机初始化。此时，向量没有意义。
+- 随任务而变：在模型训练过程中（e.g. 训练翻译工作），损失函数误差通过反向传播，导会Embedding层，“查询表”权重矩阵中每一个向量都会被不断微调和更新。
+- 高度定制：训练结束，改Embedding层存储词向量，为特定任务定制的。e.g. 法律中的charge词翻译会偏向“指控”。
+**实际应用：** Word2Vec/GloVe向量去初始化Embedding层，而非随机生成。训练过程中向量被“微调”（fine-tuning）
+
+**Embedding层在Transformer中的位置**
+序列文本`[The man ...]`->分词`['The','man',...]`->索引ID`[6,1324,...]`->Embedding层`nn.Embedding`->词向量`[句子长度，d_model]`->位置编码->Encoder Block
+
+Embedding 内部其实是一个可训练的（Vocab_size，embedding_dim）的权重矩阵，词表里的每一个值，都对应一行维度为 embedding_dim 的向量。对于输入的值，会对应到这个词向量，然后拼接成（batch_size，seq_len，embedding_dim）的矩阵输出。
+
+在torch直接调用实现：
+`self.tok_embeddings = nn.Embedding(args.vocab_size, args.dim)`
 
 ### 2. 位置编码
+Transformer的核心是**自注意力机制（Self-Attention）** 使是计算一个词语上下文其他词交互，计算注意力分数。
+存在“致命”缺点：**自注意力机制本身，是无法感知词与词之间的顺序关系**
+- 在 `Attention(Q, K, V)` 的计算中，`Q` 矩阵和 `K` 矩阵进行点积，得到一个 `[T, T]` 的分数矩阵。对于模型来说，计算“第1个词”对“第5个词”的注意力，和计算“第5个词”对“第1个词”的注意力，其内在机制是一样的。它并不关心谁前谁后。
+- **一个简单的例子：**
+	- 句子A: “**你 爱 我**”
+	- 句子B: “**我 爱 你**”
+	- 这两个句子的含义天差地别。但是，对于一个没有位置信息的自注意力模型来说，它们都是由 `{我, 你, 爱}` 这三个词的**集合**组成的。它在计算时，会发现两个句子内部的关联模式很像，但可能无法区分哪个决定了句子根本含义的**语序**。
+**自注意力机制**只能感知词与词之间的依赖关系，无法感知他们的位置和顺序
 
+**位置编码**（Positional Encodeing，PE）：创建一个词嵌入向量维度相同（d_moel=512）的“位置向量”。
+`最终输入向量=词嵌入向量+位置编码向量`
+
+**Sin/Cos**的编码作用
+编码是利用相对位置编码把位置信息载入。
+
+![](inbox/Pasted%20image%2020250902011650.png)
 ### 3. 一个完整的Transformer
+![](inbox/Pasted%20image%2020250902003259.png)
+备注：上图是原论文《Attention is all you need》配图，LayerNorm 层放在了 Attention 层后面，也就是“Post-Norm”结构，但在其发布的源代码中，LayerNorm 层是放在 Attention 层前面的，也就是“Pre Norm”结构。考虑到目前 LLM 一般采用“Pre-Norm”结构（可以使 loss 更稳定），本文在实现时采用“Pre-Norm”结构。
+
+经过 tokenizer 映射后的输出先经过 Embedding 层和 Positional Embedding 层编码，然后进入上一节讲过的 N 个 Encoder 和 N 个 Decoder（在 Transformer 原模型中，N 取为6），最后经过一个线性层和一个 Softmax 层就得到了最终输出。
+
+```python
+class Transformer(nn.Module):
+   '''整体模型'''
+    def __init__(self, args):
+        super().__init__()
+        # 必须输入词表大小和 block size
+        assert args.vocab_size is not None
+        assert args.block_size is not None
+        self.args = args
+        self.transformer = nn.ModuleDict(dict(
+            wte = nn.Embedding(args.vocab_size, args.n_embd),
+            wpe = PositionalEncoding(args),
+            drop = nn.Dropout(args.dropout),
+            encoder = Encoder(args),
+            decoder = Decoder(args),
+        ))
+        # 最后的线性层，输入是 n_embd，输出是词表大小
+        self.lm_head = nn.Linear(args.n_embd, args.vocab_size, bias=False)
+
+        # 初始化所有的权重
+        self.apply(self._init_weights)
+
+        # 查看所有参数的数量
+        print("number of parameters: %.2fM" % (self.get_num_params()/1e6,))
+        '''
+        get_num_params：用于统计模型的参数量
+        _init_weights：用于对模型所有参数进行随机初始化
+        forward：前向计算函数
+        '''
+
+    '''统计所有参数的数量'''
+    def get_num_params(self, non_embedding=False):
+        # non_embedding: 是否统计 embedding 的参数
+        n_params = sum(p.numel() for p in self.parameters())
+        # 如果不统计 embedding 的参数，就减去
+        if non_embedding:
+            n_params -= self.transformer.wte.weight.numel()
+        return n_params
+
+    '''初始化权重'''
+    def _init_weights(self, module):
+        # 线性层和 Embedding 层初始化为正则分布
+        if isinstance(module, nn.Linear):
+            torch.nn.init.normal_(module.weight, mean=0.0, std=0.02)
+            if module.bias is not None:
+                torch.nn.init.zeros_(module.bias)
+        elif isinstance(module, nn.Embedding):
+            torch.nn.init.normal_(module.weight, mean=0.0, std=0.02)
+    
+    '''前向计算函数'''
+    def forward(self, idx, targets=None):
+        # 输入为 idx，维度为 (batch size, sequence length, 1)；targets 为目标序列，用于计算 loss
+        device = idx.device
+        b, t = idx.size()
+        assert t <= self.args.block_size, f"不能计算该序列，该序列长度为 {t}, 最大序列长度只有 {self.args.block_size}"
+
+        # 通过 self.transformer
+        # 首先将输入 idx 通过 Embedding 层，得到维度为 (batch size, sequence length, n_embd)
+        print("idx",idx.size())
+        # 通过 Embedding 层
+        tok_emb = self.transformer.wte(idx)
+        print("tok_emb",tok_emb.size())
+        # 然后通过位置编码
+        pos_emb = self.transformer.wpe(tok_emb) 
+        # 再进行 Dropout
+        x = self.transformer.drop(pos_emb)
+        # 然后通过 Encoder
+        print("x after wpe:",x.size())
+        enc_out = self.transformer.encoder(x)
+        print("enc_out:",enc_out.size())
+        # 再通过 Decoder
+        x = self.transformer.decoder(x, enc_out)
+        print("x after decoder:",x.size())
+
+        if targets is not None:
+            # 训练阶段，如果我们给了 targets，就计算 loss
+            # 先通过最后的 Linear 层，得到维度为 (batch size, sequence length, vocab size)
+            logits = self.lm_head(x)
+            # 再跟 targets 计算交叉熵
+            loss = F.cross_entropy(logits.view(-1, logits.size(-1)), targets.view(-1), ignore_index=-1)
+        else:
+            # 推理阶段，我们只需要 logits，loss 为 None
+            # 取 -1 是只取序列中的最后一个作为输出
+            logits = self.lm_head(x[:, [-1], :]) # note: using list [-1] to preserve the time dim
+            loss = None
+
+        return logits, loss
+```
+
