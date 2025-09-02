@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "2cb7275185dc645a",
@@ -172,10 +173,13 @@
   },
   "active": "ee23cf97cb22673d",
   "lastOpenFiles": [
+    "chapter3/inbox/Pasted image 20250902101335.png",
+    "chapter3/inbox/Pasted image 20250902101202.png",
+    "chapter3/inbox",
+    "chapter1/第一章 NLP基础概念.md",
+    "chapter3/第三章 预训练语言模型.md",
     "chapter2/第二章 Transformer架构.md",
     "chapter2/inbox/Pasted image 20250902011650.png",
-    "chapter3/第三章 预训练语言模型.md",
-    "chapter1/第一章 NLP基础概念.md",
     "chapter2/inbox/Pasted image 20250902003259.png",
     "AI_PM/chapter1/大模型原理.md",
     "AI_PM/chapter1/生成式能力边界.md",
@@ -189,7 +193,6 @@
     "chapter2/inbox/Pasted image 20250831183141.png",
     "chapter2/inbox/8bf8faa52a436c92ffe107dbfcb3d494.png",
     "chapter2/inbox/38fd9bfa9410bcfbf3d870c2d8a29e76.png",
-    "chapter2/inbox/Pasted image 20250830225546.png",
     "前言.md",
     "AI_PM/README.md",
     "inbox",
@@ -203,7 +206,6 @@
     "chapter4",
     "chapter3",
     "chapter2/inbox",
-    "chapter2",
     "AI_PM/Resume.md",
     "Happy_LLM/chapter2/第二章 Transformer架构.md",
     "Happy_LLM/chapter1/第一章 NLP基础概念.md",
