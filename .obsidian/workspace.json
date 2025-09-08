@@ -13,40 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "chapter3/第三章 预训练语言模型.md",
+                "file": "Happy_LLM/chapter1/第一章 NLP基础概念.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "第三章 预训练语言模型"
-            }
-          },
-          {
-            "id": "060d60b1350c8676",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Datawhale讲座.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Datawhale讲座"
-            }
-          },
-          {
-            "id": "14b11ab4a4c83a88",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Datawhale人工智能.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Datawhale人工智能"
+              "title": "第一章 NLP基础概念"
             }
           },
           {
@@ -55,16 +27,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "AI 学习计划.md",
+                "file": "Happy_LLM/前言&回顾.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "AI 学习计划"
+              "title": "前言&回顾"
+            }
+          },
+          {
+            "id": "7a5737a60e1af64b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "自问自答.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "自问自答"
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -121,8 +107,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "2cb7275185dc645a",
@@ -214,11 +199,15 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "bfdbea947428680c",
+  "active": "7a5737a60e1af64b",
   "lastOpenFiles": [
+    "Happy_LLM/前言&回顾.md",
+    "自问自答.md",
+    "Happy_LLM/chapter1/第一章 NLP基础概念.md",
+    "Happy_LLM/chapter2/第二章 Transformer架构.md",
+    "AI 学习计划.md",
     "Datawhale讲座.md",
     "Datawhale人工智能.md",
-    "AI 学习计划.md",
     "AI_PM/AI产品行动营.md",
     "AI_PM/作品集.pdf",
     "AI_PM.md",
@@ -226,8 +215,6 @@
     "inbox/5887a1b944e45937b288150cdd627f34.png",
     "inbox/276bfd782500330bd8fecb4f06fc9448.png",
     "inbox/08468ffc8c21351d8949ae6b39fb8658.png",
-    "Happy_LLM/前言.md",
-    "Happy_LLM/chapter1/第一章 NLP基础概念.md",
     "inbox/Pasted image 20250905103916.png",
     "inbox/Pasted image 20250905103835.png",
     "inbox/Pasted image 20250905103720.png",
@@ -235,7 +222,6 @@
     "inbox/Pasted image 20250905103341.png",
     "inbox/Pasted image 20250905103137.png",
     "Happy_LLM/chapter3/第三章 预训练语言模型.md",
-    "Happy_LLM/chapter2/第二章 Transformer架构.md",
     "AI_PM/chapter1/生成式能力边界.md",
     "AI_PM/chapter1/大模型原理.md",
     "AI_PM/chapter1/inbox",
@@ -253,7 +239,6 @@
     "Happy_LLM/chapter5",
     "Happy_LLM/chapter4",
     "AI_PM/Resume.md",
-    "Happy_LLM/chapter2/第二章 Transformer架构.md",
     "Happy_LLM/chapter7/第七章 大模型应用.md",
     "Happy_LLM/chapter6/第六章 大模型训练流程实践.md",
     "Happy_LLM/chapter5/第五章 动手搭建大模型.md",

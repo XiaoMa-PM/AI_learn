@@ -5,7 +5,7 @@
 
 **LLM一期**
 
-点击跳转：[Happy_LLM](Happy_LLM/前言.md)
+点击跳转：[Happy_LLM](Happy_LLM/前言&回顾.md)
 
 ## PM-AI认知体系
 ---
