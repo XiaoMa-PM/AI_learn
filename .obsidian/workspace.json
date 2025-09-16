@@ -41,142 +41,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "LLM_preview/RoadMap.md",
+                "file": "Hello_Agent/chapter1/第一章 初识智能体.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "RoadMap"
+              "title": "第一章 初识智能体"
             }
           },
           {
-            "id": "1d6a9aa029ae61db",
+            "id": "60a17da872051b5b",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "AI_PM/chapter1/大模型训练的新范式：Self-Play RL.md",
+                "file": "Agent应用开发/Agent应用开发与落地全景.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "大模型训练的新范式：Self-Play RL"
-            }
-          },
-          {
-            "id": "04998aced0538f49",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "AI_PM/chapter2/提示词工程的基本原理.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "提示词工程的基本原理"
-            }
-          },
-          {
-            "id": "8dc564eac699a5d9",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "AI_PM/chapter2/提示词工程的五个法则-使用分隔符.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "提示词工程的五个法则-使用分隔符"
-            }
-          },
-          {
-            "id": "bd934d17aa351383",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "AI_PM/chapter2/提示词工程的五个法则-确使用CoT.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "提示词工程的五个法则-确使用CoT"
-            }
-          },
-          {
-            "id": "dbdc12f981e9ef6d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "AI_PM/chapter2/提示词工程的五个法则-示例、出路和近因偏差.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "提示词工程的五个法则-示例、出路和近因偏差"
-            }
-          },
-          {
-            "id": "1ca523a0151541d3",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "AI_PM/chapter2/结构化书写提示词.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "结构化书写提示词"
-            }
-          },
-          {
-            "id": "ef304f58fc575388",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "AI_PM/chapter2/工程级提示词的五个重要法则.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "工程级提示词的五个重要法则"
-            }
-          },
-          {
-            "id": "d843ce9262f7ef96",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Hello_Agent/RoadMap.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "RoadMap"
-            }
-          },
-          {
-            "id": "2790b950d81ed83a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Happy_LLM/chapter3/第三章 预训练语言模型.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "第三章 预训练语言模型"
+              "title": "Agent应用开发与落地全景"
             }
           }
         ],
-        "currentTab": 10
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -233,7 +121,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 264.5
+    "width": 264.5,
+    "collapsed": true
   },
   "right": {
     "id": "2cb7275185dc645a",
@@ -325,29 +214,42 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "d843ce9262f7ef96",
+  "active": "60a17da872051b5b",
   "lastOpenFiles": [
+    "Agent应用开发/inbox/Pasted image 20250916225310.png",
+    "Agent应用开发/inbox/Pasted image 20250916225305.png",
+    "Agent应用开发/inbox/Pasted image 20250916225259.png",
+    "Agent应用开发/inbox/Pasted image 20250916224027.png",
+    "Agent应用开发/inbox/Pasted image 20250916223205.png",
+    "Agent应用开发/inbox/Pasted image 20250916222631.png",
+    "Agent应用开发/inbox/Pasted image 20250916140412.png",
+    "Agent应用开发/inbox/Pasted image 20250916132122.png",
+    "Agent应用开发/inbox/Pasted image 20250916130653.png",
+    "Agent应用开发/inbox/Pasted image 20250916124131.png",
+    "Agent应用开发/inbox/Pasted image 20250916101514.png",
+    "Agent应用开发/inbox",
     "Hello_Agent/chapter1/第一章 初识智能体.md",
+    "Agent应用开发/Agent应用开发与落地全景.md",
+    "Agent应用开发",
+    "Happy_LLM/chapter1/第一章 NLP基础概念.md",
+    "LLM_preview/RoadMap.md",
+    "AI_PM/chapter1/大模型训练的新范式：Self-Play RL.md",
     "AI_PM/chapter2/提示词工程的基本原理.md",
+    "AI_PM/chapter2/提示词工程的五个法则-使用分隔符.md",
+    "AI_PM/chapter2/提示词工程的五个法则-确使用CoT.md",
     "AI_PM/chapter2/结构化书写提示词.md",
     "AI_PM/chapter2/工程级提示词的五个重要法则.md",
+    "Datawhale人工智能.md",
+    "Datawhale内部试点会议纪要.md",
     "Hello_Agent/RoadMap.md",
     "Hello_Agent/前言.md",
     "AI_PM/chapter2/提示词攻防战.md",
     "AI_PM/chapter2/提示词工程的五个法则-示例、出路和近因偏差.md",
-    "AI_PM/chapter2/提示词工程的五个法则-使用分隔符.md",
-    "AI_PM/chapter2/提示词工程的五个法则-确使用CoT.md",
     "LLM_preview/大模型介绍与环境配置.md",
     "LLM_preview/LLM-preview/README.md",
-    "LLM_preview/LLM-preview/images/datawhale.png",
-    "AI_PM/chapter1/大模型训练的新范式：Self-Play RL.md",
     "AI_PM/chapter2",
     "AI_PM/AI产品行动营.md",
     "AI_PM/PM_Resume_Skill.md",
-    "LLM_preview/RoadMap.md",
-    "inbox/7ef9fbaf871b205cf653ff75663b1225.png",
-    "inbox/075b4818ed7efefce4d0065903c63cd8.png",
-    "inbox/887729513c061cbc7076280f64ac21e0.jpg",
     "吴恩达：AI工程师真正需要的三个核心能力.md",
     "LLM_preview/LLM-preview/requirements.txt",
     "LLM_preview/LLM-preview/notebook/chapter4-大模型微调.ipynb",
@@ -356,22 +258,9 @@
     "LLM_preview/LLM-preview/notebook/chapter1-大模型介绍与环境配置.ipynb",
     "LLM_preview/LLM-preview/notebook",
     "LLM_preview/LLM-preview/images",
-    "LLM_preview/LLM-preview/dataset/huanhuan.json",
-    "LLM_preview/LLM-preview/dataset",
     "Happy_LLM/chapter3/第三章 预训练语言模型.md",
-    "Happy_LLM/chapter1/第一章 NLP基础概念.md",
     "Happy_LLM/前言&回顾.md",
-    "Datawhale人工智能.md",
     "Datawhale讲座.md",
-    "AI 学习计划.md",
-    "自问自答.md",
-    "AI_PM/chapter1/大模型开发和应用常用关键词解析.md",
-    "AI_PM/chapter1/技术进度：各类大模型盘点.md",
-    "AI_PM/chapter1/inbox/Pasted image 20250911003251.png",
-    "AI_PM/inbox/Pasted image 20250831205816.png",
-    "AI_PM/inbox/Pasted image 20250831210155.png",
-    "AI_PM/chapter1/inbox/Pasted image 20250909093422.png",
-    "AI_PM/chapter1/inbox/Pasted image 20250909092037.png",
-    "AI_PM/chapter1/inbox/Pasted image 20250909091706.png"
+    "AI 学习计划.md"
   ]
 }
