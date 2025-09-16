@@ -55,7 +55,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Agent应用开发/Agent应用开发与落地全景.md",
+                "file": "Agent应用开发/Task1/Agent应用开发与落地全景.md",
                 "mode": "source",
                 "source": false
               },
@@ -121,8 +121,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 264.5,
-    "collapsed": true
+    "width": 264.5
   },
   "right": {
     "id": "2cb7275185dc645a",
@@ -214,8 +213,9 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "60a17da872051b5b",
+  "active": "5f82793bf28c4b32",
   "lastOpenFiles": [
+    "Agent应用开发/Task1",
     "Agent应用开发/inbox/Pasted image 20250916225310.png",
     "Agent应用开发/inbox/Pasted image 20250916225305.png",
     "Agent应用开发/inbox/Pasted image 20250916225259.png",
@@ -226,10 +226,9 @@
     "Agent应用开发/inbox/Pasted image 20250916132122.png",
     "Agent应用开发/inbox/Pasted image 20250916130653.png",
     "Agent应用开发/inbox/Pasted image 20250916124131.png",
-    "Agent应用开发/inbox/Pasted image 20250916101514.png",
     "Agent应用开发/inbox",
     "Hello_Agent/chapter1/第一章 初识智能体.md",
-    "Agent应用开发/Agent应用开发与落地全景.md",
+    "Agent应用开发/Task1/Agent应用开发与落地全景.md",
     "Agent应用开发",
     "Happy_LLM/chapter1/第一章 NLP基础概念.md",
     "LLM_preview/RoadMap.md",
