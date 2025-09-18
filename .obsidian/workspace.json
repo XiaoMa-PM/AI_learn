@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Hello_Agent/chapter1/第一章 初识智能体.md",
+                "file": "Agent应用开发/Task2/Task2_Question.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "第一章 初识智能体"
+              "title": "Task2_Question"
             }
           },
           {
@@ -64,7 +64,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -214,29 +214,30 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "7079c545f159cb00",
+  "active": "d83a923691dd4dc0",
   "lastOpenFiles": [
-    "Agent应用开发/Task2/inbox/Pasted image 20250918103644.png",
-    "Agent应用开发/Task2/inbox/Pasted image 20250918101110.png",
-    "Agent应用开发/Task2/inbox/Pasted image 20250918094126.png",
-    "Agent应用开发/Task2/inbox/Pasted image 20250918011401.png",
-    "Agent应用开发/Task2/inbox/Pasted image 20250918011310.png",
-    "Agent应用开发/Task2/inbox/Pasted image 20250918011032.png",
-    "Agent应用开发/Task2/inbox/Pasted image 20250918010659.png",
-    "Agent应用开发/Task2/inbox/Pasted image 20250918010609.png",
-    "Agent应用开发/Task2/inbox/Pasted image 20250918010556.png",
-    "Agent应用开发/Task2/inbox/Pasted image 20250918010252.png",
-    "Agent应用开发/Task2/inbox/Pasted image 20250918010020.png",
-    "Agent应用开发/Task1/Task1_Question.md",
-    "Agent应用开发/Task2/Task2_Question.md",
+    "Agent应用开发/Task2/inbox/录屏2025-09-19 00.24.21.mov",
+    "Agent应用开发/Task2/inbox/Pasted image 20250919010339.png",
+    "Agent应用开发/Task2/inbox/Pasted image 20250919010317.png",
+    "Agent应用开发/Task2/inbox/Pasted image 20250919010252.png",
+    "Agent应用开发/Task2/inbox/Pasted image 20250919010229.png",
+    "Agent应用开发/Task2/inbox/Pasted image 20250919010137.png",
+    "Agent应用开发/Task2/inbox/Pasted image 20250919010042.png",
     "Agent应用开发/Task2/Agent产品案例深度解析.md",
+    "Agent应用开发/Task2/Task2_Question.md",
+    "Agent应用开发/Task2/inbox/Pasted image 20250919004510.png",
+    "Agent应用开发/Task2/inbox/Pasted image 20250919004324.png",
+    "Agent应用开发/Task2/inbox/Pasted image 20250919004307.png",
+    "Agent应用开发/Task2/inbox/Pasted image 20250919004256.png",
+    "Agent应用开发/RoadMap.md",
+    "Agent应用开发/Task1/Task1_Question.md",
+    "Agent应用开发/Task1/Agent应用开发与落地全景.md",
+    "Hello_Agent/chapter1/第一章 初识智能体.md",
     "求职.md",
     "自问自答.md",
-    "Agent应用开发/Task1/Agent应用开发与落地全景.md",
     "AI_PM/chapter1/生成式能力边界.md",
     "Agent应用开发/Task2/inbox",
     "Agent应用开发/Task2",
-    "Agent应用开发/RoadMap.md",
     "AI_PM/AI产品行动营.md",
     "AI_PM/PM_Resume_Skill.md",
     "Agent应用开发/Task1/inbox",
@@ -244,7 +245,6 @@
     "AI_PM/chapter2/工程级提示词的五个重要法则.md",
     "Agent应用开发/Task1",
     "Agent应用开发/inbox",
-    "Hello_Agent/chapter1/第一章 初识智能体.md",
     "Agent应用开发",
     "Happy_LLM/chapter1/第一章 NLP基础概念.md",
     "LLM_preview/RoadMap.md",
