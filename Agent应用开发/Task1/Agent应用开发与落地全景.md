@@ -45,14 +45,15 @@ Agent=大模型+记忆+主动规划+根据使用
 Langchain
 类似自动驾驶汽车的L1-L4分级，一个agentic system的智能程度上可以有不同等级的，取决于LLm对系统行为的决策权重
 
-| Mode                   | Category       | Decide Step Output | Decide Which Steps to Take | Decide Which Steps Are Available |
-| ---------------------- | -------------- | ------------------ | -------------------------- | -------------------------------- |
-| Code                   | 👨-Driven   | 👨              | 👨                      | 👨                            |
-| LLM Call               | 👨-Driven   | ⚙️              | 👨                      | 👨                            |
-| Chain (multiple steps) | 👨-Driven   | ⚙️              | ⚙️                      | 👨                            |
-| Router (no cycles)     | 👨-Driven   | ⚙️              | ⚙️                      | 👨                            |
-| State Machine (cycles) | ⚙️-Executed | ⚙️              | ⚙️                      | 👨                            |
-| Autonomous (cycles)    | ⚙️-Executed | ⚙️              | ⚙️                      | ⚙️                            |
+| Mode                   | Category    | Decide Step Output | Decide Which Steps to Take | Decide Which Steps Are Available |
+| ---------------------- | ----------- | ------------------ | -------------------------- | -------------------------------- |
+| Code                   | 👨-Driven   | 👨                 | 👨                         | 👨                               |
+| LLM Call               | 👨-Driven   | ⚙️                 | 👨                         | 👨                               |
+| Chain (multiple steps) | 👨-Driven   | ⚙️                 | ⚙️                         | 👨                               |
+| Router (no cycles)     | 👨-Driven   | ⚙️                 | ⚙️                         | 👨                               |
+| State Machine (cycles) | ⚙️-Executed | ⚙️                 | ⚙️                         | 👨                               |
+| Autonomous (cycles)    | ⚙️-Executed | ⚙️                 | ⚙️                         | ⚙️                               |
+
 
 ## 智能体系统（Agentic System）的划分
 ---
