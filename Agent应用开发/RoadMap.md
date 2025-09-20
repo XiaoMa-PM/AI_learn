@@ -1,5 +1,5 @@
 ![](inbox/075b4818ed7efefce4d0065903c63cd8.png)
-![](inbox/7ef9fbaf871b205cf653ff75663b1225.png)
+![](inbox/5f75808fe4aec07b2cde190055df5d7e%201.png)
 
 【教程地址】【https://www.datawhale.cn/learn/summary/220】
 

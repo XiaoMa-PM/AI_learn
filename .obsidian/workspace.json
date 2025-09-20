@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "LLM_preview/大模型介绍与环境配置.md",
+                "file": "Agent应用开发/Task3/Agent原理与最简实践.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "大模型介绍与环境配置"
+              "title": "Agent原理与最简实践"
             }
           },
           {
@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Agent应用开发/Task2/Task2_Question.md",
+                "file": "Agent应用开发/Task3/Agent原理与最简实践.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Task2_Question"
+              "title": "Agent原理与最简实践"
             }
           },
           {
@@ -64,7 +64,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -214,8 +214,20 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "d83a923691dd4dc0",
+  "active": "eb1babcb64e2d868",
   "lastOpenFiles": [
+    "Agent应用开发/Task3/Task3_Question.md",
+    "LLM_preview/大模型介绍与环境配置.md",
+    "Agent应用开发/Task3/Agent原理与最简实践.md",
+    "Agent应用开发/Task3/inbox/Pasted image 20250921003459.png",
+    "Agent应用开发/Task3/inbox/Pasted image 20250921000503.png",
+    "Agent应用开发/Task3/inbox",
+    "Agent应用开发/Task2/Agent产品案例深度解析.md",
+    "Agent应用开发/RoadMap.md",
+    "Agent应用开发/Task3",
+    "Agent应用开发/inbox/5f75808fe4aec07b2cde190055df5d7e 1.png",
+    "Agent应用开发/inbox/5f75808fe4aec07b2cde190055df5d7e.png",
+    "Agent应用开发/Task2/Task2_Question.md",
     "Agent应用开发/Task2/inbox/录屏2025-09-19 00.24.21.mov",
     "Agent应用开发/Task2/inbox/Pasted image 20250919010339.png",
     "Agent应用开发/Task2/inbox/Pasted image 20250919010317.png",
@@ -223,13 +235,6 @@
     "Agent应用开发/Task2/inbox/Pasted image 20250919010229.png",
     "Agent应用开发/Task2/inbox/Pasted image 20250919010137.png",
     "Agent应用开发/Task2/inbox/Pasted image 20250919010042.png",
-    "Agent应用开发/Task2/Agent产品案例深度解析.md",
-    "Agent应用开发/Task2/Task2_Question.md",
-    "Agent应用开发/Task2/inbox/Pasted image 20250919004510.png",
-    "Agent应用开发/Task2/inbox/Pasted image 20250919004324.png",
-    "Agent应用开发/Task2/inbox/Pasted image 20250919004307.png",
-    "Agent应用开发/Task2/inbox/Pasted image 20250919004256.png",
-    "Agent应用开发/RoadMap.md",
     "Agent应用开发/Task1/Task1_Question.md",
     "Agent应用开发/Task1/Agent应用开发与落地全景.md",
     "Hello_Agent/chapter1/第一章 初识智能体.md",
@@ -256,11 +261,6 @@
     "Datawhale内部试点会议纪要.md",
     "Hello_Agent/前言.md",
     "AI_PM/chapter2/提示词攻防战.md",
-    "AI_PM/chapter2/提示词工程的五个法则-示例、出路和近因偏差.md",
-    "LLM_preview/大模型介绍与环境配置.md",
-    "AI_PM/chapter2",
-    "LLM_preview/LLM-preview/requirements.txt",
-    "LLM_preview/LLM-preview/notebook/chapter4-大模型微调.ipynb",
-    "LLM_preview/LLM-preview/notebook/chapter3-Prompt Engineering.ipynb"
+    "AI_PM/chapter2"
   ]
 }
