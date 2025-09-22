@@ -108,12 +108,13 @@ Action：回复"北京今天25度，晴天"
 ## 二、从零实现最简 React Agent
 ---
 演示项目的GitHub：[blog/Blog/react-agent/code at master · KMnO4-zx/blog · GitHub](https://github.com/KMnO4-zx/blog/tree/master/Blog/react-agent/code)
-### Agent 内部数据流：
+### 2.1 Agent 内部数据流：
 ![](inbox/Pasted%20image%2020250921003459.png)
 
 - 个人认为此处的Agent有点误导，写成**上下文记忆/文本**可能更好一些
 
-### Setp 1:构建大模型
+### 2.2 系统实现流程
+#### Setp 1:构建大模型
 阶段Task：
 - 建立模型对话方法
 - 建立llm：使用api接口/本地部署
@@ -213,7 +214,7 @@ requests
 json5# 解析字符串比较灵活
 ```
 
-### Step 2：构建工具
+#### Step 2：构建工具
 阶段Task：
 - 命名：`Tools.py`
 - 添加工具的描述信息
@@ -245,7 +246,7 @@ class ReactTools:
                         'name': 'search_query',
                         'description': '搜索关键词或短语',
                         'required': True,
-                        'schema': {'type': 'string'},# schema数据格式要求
+                        'schema': {'type': 'string'},## Schema数据格式要求
                     }
                 ],
             }
@@ -279,7 +280,7 @@ class ReactTools:
         pass
 ```
 
-### Step 3:构建React Agent
+#### Step 3:构建React Agent
 整个系统的协调者，负责**管理LLM调用、工具执行和状态维护**。
 
 #### 核心组件设计
@@ -335,3 +336,203 @@ class ReactAgent:
 - .`*` (贪婪模式) : `. `匹配任意字符， `*` 匹配零次或多次。组合起来， `.*` 会尽可能 多地 匹配字符。
 - `.*?` (非贪婪/懒惰模式) : 在 `*` 后面加上 ? ，就会让匹配变得“懒惰”，也就是尽可能 少地 匹配字符。
 代码` ({.*?}|\{.*?\}|[^\n]*) `中，` {.*?} `就是用了非贪婪模式，以确保它只匹配到最近的那个 `}` 就结束，这对于处理嵌套或多个JSON对象的情况非常重要。
+
+### 2.3 系统提示构建
+**为什么系统提示如此重要？**
+系统提示是React Agent的“大脑”，他直接决定了Agent的行为模式。一个好的系统提示应该包含：
+1. 时间信息：让Agent知道道歉时间，避免过时信息
+2. 工具清单：明确告诉Agent有哪些工具可用
+3. 行为模式：详细的ReAct流程指导
+4. 输出格式：规范化的思考-行动-观察格式
+
+**构建思路**：
+我们使用f-string动态生成系统提示，这样可以：
+- 自动包含当前时间
+- 动态加载可用工具列表
+- 保持提示的时效性和准确性
+
+**系统提示词模版解析**：
+```
+prompt = f"""现在时间是 {time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())}。
+你是一位智能助手，可以使用以下工具来回答问题：
+
+{tool_descriptions}
+
+请遵循以下 ReAct 模式：
+
+思考：分析问题和需要使用的工具
+行动：选择工具 [google_search] 中的一个
+行动输入：提供工具的参数
+观察：工具返回的结果
+
+你可以重复以上循环，直到获得足够的信息来回答问题。
+
+最终答案：基于所有信息给出最终答案
+
+开始！"""
+```
+
+设计要点：
+- 中文提示：更符合国内用户习惯
+- 具体工具名：明确告诉模型可用工具
+- 循环指导：说明可以多次使用工具
+- 最终答案：明确结束条件
+
+### 2.4行动解析机制
+**为什么解析这么复杂？**
+在实际应用中，大模型的输出格式往往不够规范，可能出现：
+- 中英文混合的冒号
+- JSON格式的不规范
+- 参数缺失和格式错误
+- 多余的空格或换行
+
+因此我们需要一个**鲁棒的解析机制**。
+**解析思路**：
+1. 多层匹配：先用正则提取，再用JSON解析
+2. 容错设计：解析失败时提供降级方案
+3. 格式兼容：支持JSON字符串和纯文本参数
+
+**解析流程详解**：
+```
+模型输出：
+思考：用户询问特朗普生日，需要搜索
+行动：google_search
+行动输入：{"search_query": "特朗普生日"}
+
+解析步骤：
+1. 正则提取行动 → google_search
+2. 正则提取参数 → {"search_query": "特朗普生日"}
+3. JSON解析 → {'search_query': '特朗普生日'}
+4. 返回结构化数据 → ('google_search', {'search_query': '特朗普生日'})
+```
+
+**常见错误场景**：
+- ❌ `行动输入：特朗普生日` → 自动转为 `{"search_query": "特朗普生日"}`
+- ❌ `行动输入：{"search_query":"特朗普生日"` → 补全JSON格式
+- ❌ `行动输入："特朗普生日"` → 去除多余引号
+
+**代码实现**：
+```python
+def _parse_action(self, text: str, verbose: bool = False) -> tuple[str, dict]:
+    """从文本中解析行动和行动输入"""
+    # 更灵活的正则表达式模式
+    action_pattern = r"行动[:：]\s*(\w+)"
+    action_input_pattern = r"行动输入[:：]\s*({.*?}|\{.*?\}|[^\n]*)"
+    
+    action_match = re.search(action_pattern, text, re.IGNORECASE)
+    action_input_match = re.search(action_input_pattern, text, re.DOTALL)
+    
+    action = action_match.group(1).strip() if action_match else ""
+    action_input_str = action_input_match.group(1).strip() if action_input_match else ""
+    
+    # 清理和解析JSON
+    action_input_dict = {}
+    if action_input_str:
+        try:
+            action_input_str = action_input_str.strip()
+            if action_input_str.startswith('{') and action_input_str.endswith('}'):
+                action_input_dict = json5.loads(action_input_str)
+            else:
+                # 如果不是JSON格式，尝试解析为简单字符串参数
+                action_input_dict = {"search_query": action_input_str.strip('"\'')}
+        except Exception as e:
+            action_input_dict = {"search_query": action_input_str.strip('"\'')}
+    
+    return action, action_input_dict
+```
+
+### 2.5 ReAct主循环
+**什么是ReAct循环？**
+ReAct循环是Agent的“心跳”，它让Agent能够：
+- 持续思考：基于新信息不断调整策略
+- 工具调用：在需要时主动获取外部信息
+- 结果整合：将工具结果与已有知识结合
+循环的四个阶段：
+1. 思考阶段（Thought）：模型分析问题，决定是否需要工具
+2. 行动阶段（Action）：选择合适的工具提供参数
+3. 观察阶段（Observation）：执行工具并获取结果
+4. 整合阶段（Integration）：将新信息整合到上下文中
+
+**为什么需要`max_iterations` ？**
+- 防止无限循环：避免模型陷入死循环
+- 控制成本：限制API调用次数
+- 用户体验：避免过长的响应时间
+
+**状态管理的重要性：**
+每次循环都需要：
+- 保持上下文：将观察结果加入对话历史
+- 更新输入：为下一轮循环准备新的提示
+- 历史记录：确保模型指导之前做了什么
+
+**循环逻辑详解**：
+```python
+def run(self, query: str, max_iterations: int = 3, verbose: bool = True) -> str:
+    conversation_history = []
+    current_text = f"问题：{query}"
+    
+    for iteration in range(max_iterations):
+        # 获取模型响应
+        response, history = self.model.chat(current_text, conversation_history, self.system_prompt)
+        
+        # 解析行动
+        action, action_input = self._parse_action(response, verbose=verbose)
+        
+        if not action or action == "最终答案":
+            return self._format_response(response)
+        
+        # 执行行动
+        observation = self._execute_action(action, action_input)
+        
+        # 更新上下文继续对话
+        current_text = f"{response}\n观察结果:{observation}\n"
+        conversation_history = history
+    
+    return self._format_response(response)
+```
+
+
+## Q&A
+---
+1. Agent框架、强化学习、优化算法三者是什么关系呢？
+三者比较独立
+agent是让llm解决问题用的
+强化学习是让llm去对齐用户偏好：规范大模型的回答、提升agent能力
+优化算法：框架、循环、状态
+模型训练优化：k2等的优化器
+
+2. 请问目前最值得学习的agent开发？langgraph怎么样
+使用：哪个都行
+学习框架原理：openai的swam框架，代码精简。
+
+3. 使用langgragh做很简单吗这个框架和kanggragh相比有哪些优势？
+	a. 什么场景下需要自己搭建实现agent而不是使用成熟的agent框架？
+	b. 理解agenr原理对后续企业级agent应用开发有哪些帮助？
+ReAct用于学习的，langgragh可以适用于生产环境了
+在特定化领域针对性修改，需要自己做agent框架。
+工作可以使用成熟的框架去实现即刻。
+企业级agent应用都是封装特别好了，如dify等，了解原理后，有利于快速优化和参数理解。
+
+4. 怎么管理长期记忆？
+	a. 记忆的持久化保持一般用什么方法？
+	b. 如何对agent的记忆进行管理
+上下文太长导致记忆不清楚之前的内容，设置超出窗口（超过最大输入尺寸）总结前文内容。持久化保存和本地文件以RAG支持大模型。
+克劳德的方法：使用命令搜索内容，用RAG管理记忆。
+
+5. 调用工具失败，反思纠错逻辑如何？
+首先工具必须写清楚，其次是系统提示词
+换个模型
+
+6. codex和cc的agent设计有什么特别？
+看官方文档
+
+7. 请问什么agent框架适合入门开发使用呢？看到阿里有一个agentscope？
+都适合，对着文档看去使用，并且尝试理解它的底层逻辑怎么做的。
+
+8. 实际工程中使用agent还需要哪些优化或注意的地方？
+明确agent需要解决的问题。
+
+9. 目前agent框架很多，一般怎么选择agent？
+agentscope和msagent
+
+10. chatgpt里的gpt5thinking一个问题可以回答==好几分钟==，==多次搜索==，这种agent是怎么实现的？
+ReAct的原理即为本体答案，现在的llm的chatbox都是有这个基本框架的。

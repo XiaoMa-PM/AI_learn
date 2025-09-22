@@ -8,63 +8,34 @@
         "type": "tabs",
         "children": [
           {
-            "id": "ff0550892eb98ac4",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "LLM_preview/大模型介绍与环境配置.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "大模型介绍与环境配置"
-            }
-          },
-          {
             "id": "eb1babcb64e2d868",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Agent应用开发/Task3/Agent原理与最简实践.md",
+                "file": "Agent应用开发/Task4/MCP原理与最简实践.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Agent原理与最简实践"
+              "title": "MCP原理与最简实践"
             }
           },
           {
-            "id": "d83a923691dd4dc0",
+            "id": "dac6ea8ffe88a734",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Agent应用开发/Task3/Agent原理与最简实践.md",
+                "file": "Agent应用开发/Task3/Code_Detailed explanation.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Agent原理与最简实践"
-            }
-          },
-          {
-            "id": "7079c545f159cb00",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Agent应用开发/Task2/Agent产品案例深度解析.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Agent产品案例深度解析"
+              "title": "Code_Detailed explanation"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -217,37 +188,43 @@
   },
   "active": "eb1babcb64e2d868",
   "lastOpenFiles": [
+    "Agent应用开发/Task4/inbox/Pasted image 20250923013358.png",
+    "Agent应用开发/Task4/inbox/Pasted image 20250923013026.png",
+    "Agent应用开发/Task4/inbox/Pasted image 20250923012627.png",
+    "Agent应用开发/Task4/inbox/Pasted image 20250923012034.png",
+    "Agent应用开发/Task4/inbox/Pasted image 20250923011602.png",
+    "Agent应用开发/Task4/inbox/Pasted image 20250923011351.png",
+    "Agent应用开发/Task3/Code_Detailed explanation.md",
+    "Agent应用开发/Task4/MCP原理与最简实践.md",
+    "Agent应用开发/Task3/Task3_Question.md",
+    "Agent应用开发/Task3/Task3_self-learn_task.md",
+    "Agent应用开发/Task4/Task4_Qusetion.md",
+    "环境控制代码.md",
+    "Agent应用开发/Task4/inbox/Pasted image 20250923004139.png",
+    "Agent应用开发/Task4/inbox",
+    "Agent应用开发/Task3/Agent原理与最简实践.md",
+    "Agent应用开发/Task3/inbox/Pasted image 20250921000503.png",
+    "Agent应用开发/Task2/Task2_Question.md",
+    "Agent应用开发/Task2/Agent产品案例深度解析.md",
+    "Agent应用开发/RoadMap.md",
+    "Agent应用开发/Task3/Example_Code/xx.ipynb",
+    "Agent应用开发/Task3/Example_Code/xx.inpy",
+    "Agent应用开发/Task3/Example_Code/requirements.txt",
+    "Agent应用开发/Task3/Practice_Code/llm.py",
+    "Agent应用开发/Task4",
+    "Agent应用开发/Task1/Task1_Question.md",
+    "自问自答.md",
     "Agent应用开发/Task3/Example_Code/tool.py",
     "Agent应用开发/Task3/Example_Code/llm.py",
     "Agent应用开发/Task3/Example_Code/agent.py",
-    "Agent应用开发/Task3/Agent原理与最简实践.md",
     "Agent应用开发/Task3/Practice_Code",
-    "Agent应用开发/Task3/未命名文件夹",
-    "Agent应用开发/Task3/Example_Code",
-    "Agent应用开发/Task3/Code/agent.py",
-    "Agent应用开发/Task3/Code/llm.py",
-    "Agent应用开发/Task3/Code/tool.py",
-    "Agent应用开发/Task3/Code",
-    "Agent应用开发/Task3/Task3_Question.md",
     "LLM_preview/大模型介绍与环境配置.md",
     "Agent应用开发/Task3/inbox/Pasted image 20250921003459.png",
-    "Agent应用开发/Task3/inbox/Pasted image 20250921000503.png",
-    "Agent应用开发/Task2/Agent产品案例深度解析.md",
-    "Agent应用开发/RoadMap.md",
     "Agent应用开发/inbox/5f75808fe4aec07b2cde190055df5d7e 1.png",
     "Agent应用开发/inbox/5f75808fe4aec07b2cde190055df5d7e.png",
-    "Agent应用开发/Task2/Task2_Question.md",
-    "Agent应用开发/Task2/inbox/Pasted image 20250919010339.png",
-    "Agent应用开发/Task2/inbox/Pasted image 20250919010317.png",
-    "Agent应用开发/Task2/inbox/Pasted image 20250919010252.png",
-    "Agent应用开发/Task2/inbox/Pasted image 20250919010229.png",
-    "Agent应用开发/Task2/inbox/Pasted image 20250919010137.png",
-    "Agent应用开发/Task2/inbox/Pasted image 20250919010042.png",
-    "Agent应用开发/Task1/Task1_Question.md",
     "Agent应用开发/Task1/Agent应用开发与落地全景.md",
     "Hello_Agent/chapter1/第一章 初识智能体.md",
     "求职.md",
-    "自问自答.md",
     "AI_PM/chapter1/生成式能力边界.md",
     "AI_PM/AI产品行动营.md",
     "AI_PM/PM_Resume_Skill.md",
@@ -256,11 +233,6 @@
     "Happy_LLM/chapter1/第一章 NLP基础概念.md",
     "LLM_preview/RoadMap.md",
     "AI_PM/chapter1/大模型训练的新范式：Self-Play RL.md",
-    "AI_PM/chapter2/提示词工程的基本原理.md",
-    "AI_PM/chapter2/提示词工程的五个法则-使用分隔符.md",
-    "AI_PM/chapter2/提示词工程的五个法则-确使用CoT.md",
-    "Datawhale人工智能.md",
-    "Datawhale内部试点会议纪要.md",
-    "Hello_Agent/前言.md"
+    "AI_PM/chapter2/提示词工程的基本原理.md"
   ]
 }
