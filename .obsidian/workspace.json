@@ -20,37 +20,8 @@
               "icon": "lucide-file",
               "title": "MCP原理与最简实践"
             }
-          },
-          {
-            "id": "dac6ea8ffe88a734",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Agent应用开发/Task3/Code_Detailed explanation.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Code_Detailed explanation"
-            }
-          },
-          {
-            "id": "288a0376ae02cc90",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Agent应用开发/Task5/Agent设计模式与工程化.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Agent设计模式与工程化"
-            }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -107,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 264.5,
-    "collapsed": true
+    "width": 264.5
   },
   "right": {
     "id": "2cb7275185dc645a",
@@ -201,42 +171,45 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "288a0376ae02cc90",
+  "active": "eb1babcb64e2d868",
   "lastOpenFiles": [
-    "Agent应用开发/Task5/inbox/Pasted image 20250924001706.png",
-    "Agent应用开发/Task5/inbox/Pasted image 20250924001634.png",
-    "Agent应用开发/Task5/inbox/Pasted image 20250924001626.png",
-    "Agent应用开发/Task5/inbox/Pasted image 20250924001603.png",
-    "Agent应用开发/Task5/inbox/Pasted image 20250924001545.png",
-    "Agent应用开发/Task5/inbox/Pasted image 20250924001533.png",
-    "Agent应用开发/Task5/inbox/Pasted image 20250924001524.png",
-    "Agent应用开发/Task5/inbox/Pasted image 20250924001512.png",
-    "Agent应用开发/Task5/inbox/Pasted image 20250924001333.png",
-    "Agent应用开发/Task5/inbox/Pasted image 20250924001321.png",
-    "Agent应用开发/Task5/inbox/Pasted image 20250924001312.png",
-    "Agent应用开发/Task5/inbox",
+    "Agent应用开发/Task6/Task6_Question.md",
+    "Agent应用开发/Task6/inbox/Pasted image 20250927022932.png",
+    "Agent应用开发/Task6/inbox/Pasted image 20250927022620.png",
+    "Agent应用开发/Task6/inbox/Pasted image 20250927022108.png",
+    "Agent应用开发/Task6/inbox/Pasted image 20250927022040.png",
+    "Agent应用开发/Task6/inbox",
+    "Agent应用开发/Task6/self-dify.md",
+    "Agent应用开发/Task6/工作流Agent开发范式与最佳实践.md",
+    "Agent应用开发/Task3/Code_Detailed explanation.md",
+    "Agent应用开发/Task3/Example_Code/llm.py",
+    "Agent应用开发/Task3/Task3_Question.md",
+    "Agent应用开发/Task3/Agent原理与最简实践.md",
+    "Agent应用开发/Task4/MCP原理与最简实践.md",
+    "Agent应用开发/Task4/Task4_Qusetion.md",
     "Agent应用开发/RoadMap.md",
     "Agent应用开发/Task5/Agent设计模式与工程化.md",
+    "Agent应用开发/Task6",
+    "云栖大会.md",
+    "inbox/Pasted image 20250924123048.png",
+    "inbox/Pasted image 20250924122531.png",
+    "inbox/Pasted image 20250924121753.png",
+    "inbox/Pasted image 20250924120214.png",
+    "Agent应用开发/Task5/inbox/Pasted image 20250924001706.png",
+    "Agent应用开发/Task5/inbox/Pasted image 20250924001634.png",
+    "Agent应用开发/Task5/inbox",
     "Agent应用开发/Task5",
-    "Agent应用开发/Task4/Task4_Qusetion.md",
-    "Agent应用开发/Task4/MCP原理与最简实践.md",
-    "Agent应用开发/Task3/Code_Detailed explanation.md",
-    "Agent应用开发/Task3/Task3_Question.md",
     "Agent应用开发/Task3/Task3_self-learn_task.md",
     "环境控制代码.md",
     "Agent应用开发/Task4/inbox",
-    "Agent应用开发/Task3/Agent原理与最简实践.md",
     "Agent应用开发/Task2/Task2_Question.md",
     "Agent应用开发/Task2/Agent产品案例深度解析.md",
     "Agent应用开发/Task3/Example_Code/xx.ipynb",
     "Agent应用开发/Task3/Example_Code/xx.inpy",
     "Agent应用开发/Task3/Example_Code/requirements.txt",
     "Agent应用开发/Task3/Practice_Code/llm.py",
-    "Agent应用开发/Task4",
     "Agent应用开发/Task1/Task1_Question.md",
     "自问自答.md",
-    "Agent应用开发/Task3/Example_Code/tool.py",
-    "Agent应用开发/Task3/Example_Code/llm.py",
     "LLM_preview/大模型介绍与环境配置.md",
     "Agent应用开发/Task1/Agent应用开发与落地全景.md",
     "Hello_Agent/chapter1/第一章 初识智能体.md",
@@ -244,10 +217,6 @@
     "AI_PM/chapter1/生成式能力边界.md",
     "AI_PM/AI产品行动营.md",
     "AI_PM/PM_Resume_Skill.md",
-    "AI_PM/chapter2/结构化书写提示词.md",
-    "AI_PM/chapter2/工程级提示词的五个重要法则.md",
-    "Happy_LLM/chapter1/第一章 NLP基础概念.md",
-    "LLM_preview/RoadMap.md",
-    "AI_PM/chapter1/大模型训练的新范式：Self-Play RL.md"
+    "AI_PM/chapter2/结构化书写提示词.md"
   ]
 }
