@@ -7,23 +7,23 @@ from tool import ReactTools
 
 
 class ReactAgent:
-    def __init__(self, api_key: str = '') -> None:
+    def __init__(self, api_key: str = '') -> None:      # 定义参数工具，实现类初始化
         self.api_key = api_key
         self.tools = ReactTools()
         self.model = Siliconflow(api_key=self.api_key)
-        self.system_prompt = self._build_system_prompt()
+        self.system_prompt = self._build_system_prompt()# 系统提示
         
-    def _build_system_prompt(self) -> str:
+    def _build_system_prompt(self) -> str:              # 构建系统提示，使用 ReAct 模式
         """构建系统提示，使用 ReAct 模式"""
-        tool_descriptions = []
-        for tool in self.tools.toolConfig:
-            tool_descriptions.append(
-                f"{tool['name_for_model']}: {tool['description_for_model']}"
-                f" 参数: {json5.dumps(tool['parameters'], ensure_ascii=False)}"
+        tool_descriptions = []                          # 工具描述列表
+        for tool in self.tools.toolConfig:              # 遍历工具配置
+            tool_descriptions.append(                   # 工具描述
+                f"{tool['name_for_model']}: {tool['description_for_model']}"# 工具名称和描述
+                f" 参数: {json5.dumps(tool['parameters'], ensure_ascii=False)}"# 工具参数
             )
         
-        tool_names = [tool['name_for_model'] for tool in self.tools.toolConfig]
-        
+        tool_names = [tool['name_for_model'] for tool in self.tools.toolConfig]# 工具名称列表
+        # 建立系统提示词（该示例为简易化的prompt）
         prompt = f"""现在时间是 {time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())}。你是一位智能助手，可以使用以下工具来回答问题：
 
 {chr(10).join(tool_descriptions)}
@@ -44,12 +44,12 @@ class ReactAgent:
         return prompt
     
     def _parse_action(self, text: str, verbose: bool = False) -> tuple[str, dict]:
-        """从文本中解析行动和行动输入"""
+        """从文本中解析行动和行动输入"""                    # 与上方的系统提示词中的注释保持一致
         # 更灵活的正则表达式模式
         action_pattern = r"行动[:：]\s*(\w+)"
         action_input_pattern = r"行动输入[:：]\s*({.*?}|\{.*?\}|[^\n]*)"
         
-        action_match = re.search(action_pattern, text, re.IGNORECASE)
+        action_match = re.search(action_pattern, text, re.IGNORECASE)          
         action_input_match = re.search(action_input_pattern, text, re.DOTALL)
         
         action = action_match.group(1).strip() if action_match else ""
