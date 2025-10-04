@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Agent应用开发/Task8/多智能体开发范式与最佳实践.md",
+                "file": "Agent应用开发/Task7/面试知识库agent.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "多智能体开发范式与最佳实践"
+              "title": "面试知识库agent"
             }
           }
         ]
@@ -173,20 +173,22 @@
   },
   "active": "6ddc9bf72af09f1a",
   "lastOpenFiles": [
+    "Agent应用开发/Task7/Agent+MCP开发范式与最佳实践.md",
+    "Agent应用开发/Task7/面试知识库agent.md",
+    "Agent应用开发/Task6/self-dify.md",
+    "Agent应用开发/Task6/Task6_Question.md",
+    "Agent应用开发/Task7/Task7_Question.md",
+    "Agent应用开发/Task8/Task8_Question.md",
+    "Agent应用开发/Task8/多智能体开发范式与最佳实践.md",
     "Agent应用开发/Task8/inbox/Pasted image 20251003010227.png",
     "Agent应用开发/Task8/inbox",
-    "Agent应用开发/Task7/Task7_Question.md",
-    "Agent应用开发/Task7/Agent+MCP开发范式与最佳实践.md",
     "Agent应用开发/RoadMap.md",
     "LLM_preview/大模型介绍与环境配置.md",
     "Reader/大模型应用开发：动手做AI Agent/大模型应用开发：动手做AI Agent.md",
     "Reader/大模型应用开发：动手做AI Agent/Chater1：何谓Agent，为何Agent.md",
-    "Agent应用开发/Task8/多智能体开发范式与最佳实践.md",
     "Agent应用开发/Task8",
     "Datawhale内部试点会议纪要.md",
     "Agent应用开发/Task6/工作流Agent开发范式与最佳实践.md",
-    "Agent应用开发/Task6/Task6_Question.md",
-    "Agent应用开发/Task6/self-dify.md",
     "Reader/大模型应用开发：动手做AI Agent",
     "inbox/Pasted image 20250930172054.png",
     "inbox/Pasted image 20250930172046.png",
@@ -208,7 +210,6 @@
     "AI_PM/chapter1/大模型原理.md",
     "AI_PM/chapter1/大模型开发和应用常用关键词解析.md",
     "AI_PM/PM_Resume_Skill.md",
-    "AI_PM/AI产品行动营.md",
     "Agent应用开发/Task6/inbox/Pasted image 20250927022932.png",
     "Agent应用开发/Task6/inbox/Pasted image 20250927022620.png",
     "Agent应用开发/Task6/inbox/Pasted image 20250927022108.png",
@@ -217,7 +218,6 @@
     "Agent应用开发/Task3/Example_Code/llm.py",
     "Agent应用开发/Task6",
     "inbox/Pasted image 20250924123048.png",
-    "inbox/Pasted image 20250924122531.png",
     "Agent应用开发/Task5/inbox"
   ]
 }
