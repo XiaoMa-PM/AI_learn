@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Agent应用开发/Task7/面试知识库agent.md",
+                "file": "Agent应用开发/Task8/DeepResearch_Dify.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "面试知识库agent"
+              "title": "DeepResearch_Dify"
             }
           }
         ]
@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 264.5
+    "width": 264.5,
+    "collapsed": true
   },
   "right": {
     "id": "2cb7275185dc645a",
@@ -173,8 +174,17 @@
   },
   "active": "6ddc9bf72af09f1a",
   "lastOpenFiles": [
-    "Agent应用开发/Task7/Agent+MCP开发范式与最佳实践.md",
+    "Agent应用开发/Task8/inbox/Pasted image 20251005020641.png",
+    "Agent应用开发/Task8/inbox/image-4.png",
+    "Agent应用开发/Task8/inbox/Pasted image 20251004183213.png",
+    "Agent应用开发/未命名.canvas",
+    "Agent应用开发/Task8/DeepResearch_Dify.md",
+    "Agent应用开发/Task8/inbox/image-3.png",
+    "Agent应用开发/Task8/inbox/image-2.png",
+    "Agent应用开发/Task8/inbox/download_image.png",
+    "Agent应用开发/Task8/inbox/1d2c3e1b-0131-4088-a01e-df6ce2c22cd6.png",
     "Agent应用开发/Task7/面试知识库agent.md",
+    "Agent应用开发/Task7/Agent+MCP开发范式与最佳实践.md",
     "Agent应用开发/Task6/self-dify.md",
     "Agent应用开发/Task6/Task6_Question.md",
     "Agent应用开发/Task7/Task7_Question.md",
@@ -202,22 +212,14 @@
     "自问自答.md",
     "云栖大会.md",
     "求职.md",
-    "Agent应用开发/Task7/inbox/Pasted image 20250930022211.png",
     "Agent应用开发/Task7/inbox",
     "Agent应用开发/Task5/Agent设计模式与工程化.md",
     "AI_PM/chapter1/技术进度：各类大模型盘点.md",
     "Agent应用开发/Task7",
     "AI_PM/chapter1/大模型原理.md",
-    "AI_PM/chapter1/大模型开发和应用常用关键词解析.md",
-    "AI_PM/PM_Resume_Skill.md",
-    "Agent应用开发/Task6/inbox/Pasted image 20250927022932.png",
-    "Agent应用开发/Task6/inbox/Pasted image 20250927022620.png",
-    "Agent应用开发/Task6/inbox/Pasted image 20250927022108.png",
-    "Agent应用开发/Task6/inbox/Pasted image 20250927022040.png",
     "Agent应用开发/Task6/inbox",
     "Agent应用开发/Task3/Example_Code/llm.py",
     "Agent应用开发/Task6",
-    "inbox/Pasted image 20250924123048.png",
     "Agent应用开发/Task5/inbox"
   ]
 }
