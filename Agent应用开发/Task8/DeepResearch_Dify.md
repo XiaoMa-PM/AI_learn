@@ -4,7 +4,8 @@
 🔗链接：[deepresearch 设计 - 飞书云文档](https://spvrm23ffj.feishu.cn/wiki/HKlBw23R4iZaBnkcLlHcnPjPneh?from=from_copylink)
 学习时间：2025/10/4
 简介：
-包含讲解Deepresearch的发展、结构拆解、Deepresearch的实现
+包含讲解Deepresearch的发展、结构拆解、Deepresearch的实现。
+该项目快速了解Deepresearch的发展与如何使用Dify实现DeepResearch。
 
 ## DeepResearch的综述
 ---
@@ -93,6 +94,8 @@ IF判断是否进行查询
 - ![](inbox/image-4.png)
 循环结束，使用大模型做结果整合
 - 编写sys prompt和use prompt
+
+### 实操结果
 ![](inbox/Pasted%20image%2020251005020641.png)
 
 ### 深入设计
@@ -105,3 +108,5 @@ IF判断是否进行查询
 ## 拓展
 ---
 需要学会写JSON
+深度理解Tavily怎么配置
+去学习`Research agent process flow`使用，如何使用MCP浏览器检索

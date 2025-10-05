@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "f3b2abd84231f673",
+        "id": "0e809c0f473c22f5",
         "type": "tabs",
         "children": [
           {
-            "id": "6ddc9bf72af09f1a",
+            "id": "e67ad56f2f2b2a11",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Agent应用开发/Task8/DeepResearch_Dify.md",
+                "file": "Agent应用开发/Task7/Dify MCP综合应用.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "DeepResearch_Dify"
+              "title": "Dify MCP综合应用"
             }
           }
         ]
@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 264.5,
-    "collapsed": true
+    "width": 264.5
   },
   "right": {
     "id": "2cb7275185dc645a",
@@ -172,24 +171,25 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "6ddc9bf72af09f1a",
+  "active": "5f82793bf28c4b32",
   "lastOpenFiles": [
+    "Agent应用开发/Task8/DeepResearch_Dify.md",
+    "Agent应用开发/Task8/多智能体开发范式与最佳实践.md",
+    "Agent应用开发/Task7/Agent+MCP开发范式与最佳实践.md",
+    "Agent应用开发/Task7/Dify MCP综合应用.md",
+    "Agent应用开发/Task8/Task8_Question.md",
     "Agent应用开发/Task8/inbox/Pasted image 20251005020641.png",
     "Agent应用开发/Task8/inbox/image-4.png",
     "Agent应用开发/Task8/inbox/Pasted image 20251004183213.png",
     "Agent应用开发/未命名.canvas",
-    "Agent应用开发/Task8/DeepResearch_Dify.md",
     "Agent应用开发/Task8/inbox/image-3.png",
     "Agent应用开发/Task8/inbox/image-2.png",
     "Agent应用开发/Task8/inbox/download_image.png",
     "Agent应用开发/Task8/inbox/1d2c3e1b-0131-4088-a01e-df6ce2c22cd6.png",
     "Agent应用开发/Task7/面试知识库agent.md",
-    "Agent应用开发/Task7/Agent+MCP开发范式与最佳实践.md",
     "Agent应用开发/Task6/self-dify.md",
     "Agent应用开发/Task6/Task6_Question.md",
     "Agent应用开发/Task7/Task7_Question.md",
-    "Agent应用开发/Task8/Task8_Question.md",
-    "Agent应用开发/Task8/多智能体开发范式与最佳实践.md",
     "Agent应用开发/Task8/inbox/Pasted image 20251003010227.png",
     "Agent应用开发/Task8/inbox",
     "Agent应用开发/RoadMap.md",
@@ -202,7 +202,6 @@
     "Reader/大模型应用开发：动手做AI Agent",
     "inbox/Pasted image 20250930172054.png",
     "inbox/Pasted image 20250930172046.png",
-    "inbox/Pasted image 20250930162208.png",
     "Reader",
     "Datawhale人工智能.md",
     "Env&Git.md",
