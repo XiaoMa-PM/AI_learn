@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 264.5
+    "width": 264.5,
+    "collapsed": true
   },
   "right": {
     "id": "2cb7275185dc645a",
@@ -173,6 +174,7 @@
   },
   "active": "e67ad56f2f2b2a11",
   "lastOpenFiles": [
+    "Agent应用开发/Task7/inbox/Pasted image 20251007011636.png",
     "Agent应用开发/Task7/inbox/8-百度地图server.png",
     "Agent应用开发/Task7/inbox/架构图3.png",
     "Agent应用开发/Task8/Task8_Question.md",
@@ -202,7 +204,6 @@
     "Datawhale内部试点会议纪要.md",
     "Agent应用开发/Task6/工作流Agent开发范式与最佳实践.md",
     "Reader/大模型应用开发：动手做AI Agent",
-    "inbox/Pasted image 20250930172054.png",
     "Reader",
     "Datawhale人工智能.md",
     "Env&Git.md",

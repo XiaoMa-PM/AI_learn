@@ -59,6 +59,7 @@ https://github.com/baidu-maps/mcp/blob/main/src/baidu-map/python/src/mcp_server_
 Dify关于MCP介绍：[mp.weixin.qq.com/s/CDhqmLO1JXSB\_\_aUMqoGoQ](https://mp.weixin.qq.com/s/CDhqmLO1JXSB__aUMqoGoQ)
 ## Dify的MCP插件
 ---
+**Dify插件介绍**
 - Dify平台的模型和工具以插件形式独立运行
 - 热插拔设计插件
 
@@ -69,11 +70,84 @@ MCP插件来源：
 - 社区共享：GitHub
 - 本地私域
 
+Dify与MCP/A2A的关系是什么？
+Agent2Agent（A2A）：谷歌推出的开源协议，作为Agent的「通用通信语言」
+
+插件更新在其GitHub有人提交
+
+Agent策略
+
+**Dify MCP插件**
+- MCP SSE
+- StreamableHTTP
+
+**补充：MCP SSE的使用与授权**
+多MCP SSE模版
+```JSON
+{
+  "mcpServers": {
+      "server_name1": {
+        "transport": "sse",
+        "url": "http://127.0.0.1:8000/sse",
+        "headers": {},
+        "timeout": 50,
+        "sse_read_timeout": 50
+      },
+      "server_name2": {
+        "transport": "sse",
+        "url": "http://127.0.0.1:8001/sse"
+      },
+      "server_name3": {
+        "transport": "streamable_http",
+        "url": "http://127.0.0.1:8002/mcp",
+        "headers": {},
+        "timeout": 50
+      },
+      "server_name4": {
+        "transport": "streamable_http",
+        "url": "http://127.0.0.1:8003/mcp"
+      }
+    }
+}
+```
+
 ## MCP国内平台及应用服务
 ---
+### 使用魔搭社区MCP广场
+[魔搭社区](https://modelscope.cn/mcp)
+### 12306MCP
+`{  "server_name": {    "url": "http://127.0.0.1:8000/sse",    "headers": {}, "timeout": 50,    "sse_read_timeout": 50  }}`
+
+社区内选择某一工具：
+- 点击“连接”产生授权的JSON，输入到SEE中
+- 点击“工具测试”。查看MCP工具所具备的能力与具体方式
+
+### 力扣MCP
+力扣MCP是一个算法练习的平台，可以就行一些编程语言小练习
+LeetCode MCP服务器
+
+
+
+### 国内支持MCP的产品
+#### 高德地图MCP
+
+#### 智谱搜索MCP
+
+
+### 补充：Local的MCP进行本地部署的流程
+Hosted属于魔搭托管的MCP服务
+Local需要自行本地部署
+
+
 
 ## 搭建一个MCP智能体
 ---
+- Dify目前支持MCP的有三个应用类型：工作流、ChatFlow、Agent
+- 设置Prompt
+- 添加工具：获取MCP工具列表、调用MCP工具、time获取当前时间
+
+**实践成功案例**：
+![](inbox/Pasted%20image%2020251007011636.png)
 
 ## MCP工作流实践
 ---
