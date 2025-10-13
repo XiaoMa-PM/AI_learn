@@ -4,11 +4,25 @@
     "type": "split",
     "children": [
       {
-        "id": "0e809c0f473c22f5",
+        "id": "202a60318329e106",
         "type": "tabs",
         "children": [
           {
-            "id": "e67ad56f2f2b2a11",
+            "id": "5072f8232905c9bd",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "OpenAi-agent/RoadMap.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "RoadMap"
+            }
+          },
+          {
+            "id": "ae787eedf0323855",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -21,7 +35,8 @@
               "title": "Dify MCP综合应用"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -78,8 +93,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 264.5,
-    "collapsed": true
+    "width": 264.5
   },
   "right": {
     "id": "2cb7275185dc645a",
@@ -172,17 +186,45 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "e67ad56f2f2b2a11",
+  "active": "ae787eedf0323855",
   "lastOpenFiles": [
+    "Agent应用开发/Task7/Agent+MCP开发范式与最佳实践.md",
+    "Agent应用开发/Task7/面试知识库agent.md",
+    "Agent应用开发/Task6/工作流Agent开发范式与最佳实践.md",
+    "Agent应用开发/Task6/Task6_Question.md",
+    "Agent应用开发/Task6/self-dify.md",
+    "AI_命理/AI-Test.md",
+    "OpenAi-agent/RoadMap.md",
+    "AI_命理",
+    "math-for-ai/RoadMap.md",
+    "OpenAi-agent/inbox/e9fe54420b09ee220cb569164d4e3a96.png",
+    "OpenAi-agent/inbox",
+    "Agent应用开发/RoadMap.md",
+    "OpenAi-agent",
+    "math-for-ai/inbox/bd86b9b2fca3f22c8e77b0c57554b00e.jpg",
+    "math-for-ai/inbox",
+    "math-for-ai",
+    "wow-agent/notebooks",
+    "wow-agent/tutorial",
+    "wow-agent",
+    "Agent应用开发/Task5/Agent设计模式与工程化.md",
+    "Agent应用开发/Task4/Task4_Qusetion.md",
+    "Agent应用开发/Task3/Example_Code/tool.py",
+    "Agent应用开发/Task3/Example_Code/llm.py",
+    "Agent应用开发/Task3/Task3_Question.md",
+    "Agent应用开发/Task2/Task2_Question.md",
+    "Agent应用开发/Task2/Agent产品案例深度解析.md",
+    "Agent应用开发/Task1/Task1_Question.md",
+    "Agent应用开发/Task1/Agent应用开发与落地全景.md",
+    "Env&Git.md",
+    "Duolinguo.md",
+    "Agent应用开发/Task7/Dify MCP综合应用.md",
     "Agent应用开发/Task7/inbox/Pasted image 20251007011636.png",
     "Agent应用开发/Task7/inbox/8-百度地图server.png",
     "Agent应用开发/Task7/inbox/架构图3.png",
     "Agent应用开发/Task8/Task8_Question.md",
     "Agent应用开发/Task8/DeepResearch_Dify.md",
     "Agent应用开发/Task8/多智能体开发范式与最佳实践.md",
-    "Agent应用开发/Task7/面试知识库agent.md",
-    "Agent应用开发/Task7/Dify MCP综合应用.md",
-    "Agent应用开发/Task7/Agent+MCP开发范式与最佳实践.md",
     "Agent应用开发/Task7/Task7_Question.md",
     "Agent应用开发/Task8/inbox/Pasted image 20251005020641.png",
     "Agent应用开发/Task8/inbox/image-4.png",
@@ -190,36 +232,8 @@
     "Agent应用开发/未命名.canvas",
     "Agent应用开发/Task8/inbox/image-3.png",
     "Agent应用开发/Task8/inbox/image-2.png",
-    "Agent应用开发/Task8/inbox/download_image.png",
-    "Agent应用开发/Task8/inbox/1d2c3e1b-0131-4088-a01e-df6ce2c22cd6.png",
-    "Agent应用开发/Task6/self-dify.md",
-    "Agent应用开发/Task6/Task6_Question.md",
-    "Agent应用开发/Task8/inbox/Pasted image 20251003010227.png",
-    "Agent应用开发/Task8/inbox",
-    "Agent应用开发/RoadMap.md",
     "LLM_preview/大模型介绍与环境配置.md",
     "Reader/大模型应用开发：动手做AI Agent/大模型应用开发：动手做AI Agent.md",
-    "Reader/大模型应用开发：动手做AI Agent/Chater1：何谓Agent，为何Agent.md",
-    "Agent应用开发/Task8",
-    "Datawhale内部试点会议纪要.md",
-    "Agent应用开发/Task6/工作流Agent开发范式与最佳实践.md",
-    "Reader/大模型应用开发：动手做AI Agent",
-    "Reader",
-    "Datawhale人工智能.md",
-    "Env&Git.md",
-    "Datawhale讲座.md",
-    "吴恩达：AI工程师真正需要的三个核心能力.md",
-    "AI 学习计划.md",
-    "自问自答.md",
-    "云栖大会.md",
-    "求职.md",
-    "Agent应用开发/Task7/inbox",
-    "Agent应用开发/Task5/Agent设计模式与工程化.md",
-    "AI_PM/chapter1/技术进度：各类大模型盘点.md",
-    "Agent应用开发/Task7",
-    "Agent应用开发/Task6/inbox",
-    "Agent应用开发/Task3/Example_Code/llm.py",
-    "Agent应用开发/Task6",
-    "Agent应用开发/Task5/inbox"
+    "Reader/大模型应用开发：动手做AI Agent/Chater1：何谓Agent，为何Agent.md"
   ]
 }
