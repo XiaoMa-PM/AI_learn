@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "LLM_preview/大模型介绍与环境配置.md",
+                "file": "OpenAi-agent/Task1/安装与配置.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "大模型介绍与环境配置"
+              "title": "安装与配置"
             }
           }
         ]
@@ -171,13 +171,14 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "5072f8232905c9bd",
+  "active": "5f82793bf28c4b32",
   "lastOpenFiles": [
+    "OpenAi-agent/RoadMap.md",
+    "LLM_preview/大模型介绍与环境配置.md",
     "Agent应用开发/Task1/Task1_Question.md",
     "Agent应用开发/Task1/Agent应用开发与落地全景.md",
     "OpenAi-agent/Task1/安装与配置.md",
     "OpenAi-agent/Task1",
-    "OpenAi-agent/RoadMap.md",
     "Agent应用开发/Task7/Dify MCP综合应用.md",
     "Agent应用开发/Task7/Agent+MCP开发范式与最佳实践.md",
     "Agent应用开发/Task7/面试知识库agent.md",
@@ -217,7 +218,6 @@
     "Agent应用开发/Task8/inbox/Pasted image 20251004183213.png",
     "Agent应用开发/未命名.canvas",
     "Agent应用开发/Task8/inbox/image-3.png",
-    "Agent应用开发/Task8/inbox/image-2.png",
-    "LLM_preview/大模型介绍与环境配置.md"
+    "Agent应用开发/Task8/inbox/image-2.png"
   ]
 }
