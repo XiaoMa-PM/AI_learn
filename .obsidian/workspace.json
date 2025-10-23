@@ -173,6 +173,7 @@
   },
   "active": "5072f8232905c9bd",
   "lastOpenFiles": [
+    "OpenAi-agent/Task5",
     "OpenAi-agent/Task4/追踪.ipynb",
     "OpenAi-agent/Task4/移交.ipynb",
     "OpenAi-agent/Task3/Run.ipynb",
@@ -186,7 +187,6 @@
     "OpenAi-agent/Task3/Tools.ipynb",
     "OpenAi-agent/Task2/Agent.ipynb",
     "OpenAi-agent/Task2/Agent",
-    "OpenAi-agent/Task2",
     "LLM_preview/大模型介绍与环境配置.md",
     "Agent应用开发/Task1/Task1_Question.md",
     "Agent应用开发/Task1/Agent应用开发与落地全景.md",
