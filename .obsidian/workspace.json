@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "OpenAi-agent/RoadMap.md",
+                "file": "Agent应用开发/Task4/MCP原理与最简实践.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "RoadMap"
+              "title": "MCP原理与最简实践"
             }
           }
         ]
@@ -173,6 +173,7 @@
   },
   "active": "5072f8232905c9bd",
   "lastOpenFiles": [
+    "OpenAi-agent/RoadMap.md",
     "OpenAi-agent/Task5",
     "OpenAi-agent/Task4/追踪.ipynb",
     "OpenAi-agent/Task4/移交.ipynb",
@@ -182,11 +183,9 @@
     "OpenAi-agent/Task2/Agent配置.ipynb",
     "OpenAi-agent/Task2/配置Agent.ipynb",
     "OpenAi-agent/Task1/安装与配置.md",
-    "OpenAi-agent/RoadMap.md",
     "OpenAi-agent/Task3/MCP.ipynb",
     "OpenAi-agent/Task3/Tools.ipynb",
     "OpenAi-agent/Task2/Agent.ipynb",
-    "OpenAi-agent/Task2/Agent",
     "LLM_preview/大模型介绍与环境配置.md",
     "Agent应用开发/Task1/Task1_Question.md",
     "Agent应用开发/Task1/Agent应用开发与落地全景.md",
