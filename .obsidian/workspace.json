@@ -8,17 +8,17 @@
         "type": "tabs",
         "children": [
           {
-            "id": "5072f8232905c9bd",
+            "id": "028778c1c2cbb0dc",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Agent应用开发/Task4/MCP原理与最简实践.md",
+                "file": "Happy_LLM/chapter2/第二章 Transformer架构.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "MCP原理与最简实践"
+              "title": "第二章 Transformer架构"
             }
           }
         ]
@@ -171,8 +171,20 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "5072f8232905c9bd",
+  "active": "028778c1c2cbb0dc",
   "lastOpenFiles": [
+    "Happy_LLM/chapter3/第三章 预训练语言模型.md",
+    "Happy_LLM/chapter4/第四章 大语言模型.md",
+    "Happy_LLM/chapter5/第五章 动手搭建大模型.md",
+    "Happy_LLM/chapter7/第七章 大模型应用.md",
+    "Happy_LLM/chapter6/第六章 大模型训练流程实践.md",
+    "Happy_LLM/chapter2/第二章 Transformer架构.md",
+    "Happy_LLM/chapter1/第一章 NLP基础概念.md",
+    "Env&Git.md",
+    "Duolinguo.md",
+    "Agent应用开发/Task8/多智能体开发范式与最佳实践.md",
+    "Reader/大模型应用开发：动手做AI Agent/大模型应用开发：动手做AI Agent.md",
+    "Agent应用开发/Task4/MCP原理与最简实践.md",
     "OpenAi-agent/RoadMap.md",
     "OpenAi-agent/Task5",
     "OpenAi-agent/Task4/追踪.ipynb",
@@ -198,21 +210,10 @@
     "AI_命理/AI-Test.md",
     "math-for-ai/RoadMap.md",
     "OpenAi-agent/inbox/e9fe54420b09ee220cb569164d4e3a96.png",
-    "Agent应用开发/RoadMap.md",
     "math-for-ai/inbox/bd86b9b2fca3f22c8e77b0c57554b00e.jpg",
-    "Agent应用开发/Task5/Agent设计模式与工程化.md",
-    "Agent应用开发/Task4/Task4_Qusetion.md",
-    "Agent应用开发/Task3/Task3_Question.md",
-    "Agent应用开发/Task2/Task2_Question.md",
-    "Agent应用开发/Task2/Agent产品案例深度解析.md",
-    "Env&Git.md",
-    "Duolinguo.md",
     "Agent应用开发/Task7/inbox/Pasted image 20251007011636.png",
     "Agent应用开发/Task7/inbox/8-百度地图server.png",
     "Agent应用开发/Task7/inbox/架构图3.png",
-    "Agent应用开发/Task8/Task8_Question.md",
-    "Agent应用开发/Task8/DeepResearch_Dify.md",
-    "Agent应用开发/Task8/多智能体开发范式与最佳实践.md",
     "Agent应用开发/Task8/inbox/Pasted image 20251005020641.png",
     "Agent应用开发/Task8/inbox/image-4.png",
     "Agent应用开发/Task8/inbox/Pasted image 20251004183213.png",
